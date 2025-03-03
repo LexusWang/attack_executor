@@ -10,6 +10,7 @@ pip install -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/
 You also need to install the tools that will be used by Attack Executor. For now, Attack Executor supports the following tools:
 - [Metasploit](#metasploit)
 - [Sliver](#sliver)
+- Nmap
 
 ## Sliver
 
