@@ -43,6 +43,18 @@ client_config_file = /home/user/Downloads/zer0cool.cfg
 ```
 $ msfconsole
 msf> load msgrpc [Pass=yourpassword]
+[*] MSGRPC Service:  127.0.0.1:55552 
+[*] MSGRPC Username: msf
+[*] MSGRPC Password: glycNshR
+[*] Successfully loaded plugin: msgrpc
+```
+
+Then, modify the related entries in `config.ini`:
+```
+[metasploit]
+password = glycNshR
+host_ip = 127.0.0.1
+listening_port = 55552
 ```
 
 
