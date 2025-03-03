@@ -3,13 +3,13 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "my_module"
+name = "attack_executor"
 version = "0.1.0"
 authors = [
-    {name = "Your Name", email = "your.email@example.com"},
+    {name = "Lexus Wang", email = "lingzhiwang2025@u.northwestern.edu"},
 ]
 description = "A simple example module"
 readme = "README.md"
-requires-python = ">=3.6"
+requires-python = ">=3.11"
 license = {text = "MIT"}
 dependencies = []
