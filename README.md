@@ -1,4 +1,15 @@
 # Attack Executor
+Attack Executor is a standardized toolkit for conducting cyberattacks and penetration testing. Our goal is to define a standardized approach to use the common tools involved in cyberattacks and penetration tests, thereby increasing the efficiency of attack execution and prepare for an LLM Agent capable of automated penetration testing and red-team simulations.
+
+## Installation
+In order to use Attack Executor, please install the Python package using
+```
+pip install -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple attack-executor==0.1.2
+```
+
+You also need to install the tools that will be used by Attack Executor. For now, Attack Executor supports the following tools:
+- [Metasploit](#metasploit)
+- [Sliver](#sliver)
 
 ## Sliver
 
@@ -16,6 +27,13 @@ sliver > new-operator --name zer0cool --lhost localhost --lport 34567 --save ./z
 sliver > multiplayer --lport 34567
 [*] Multiplayer mode enabled!
 ```
+
+Then, modify the related entries in `config.ini`:
+```
+[sliver]
+client_config_file = /home/user/Downloads/zer0cool.cfg
+```
+
 ## Metasploit
 
 ### Installation
