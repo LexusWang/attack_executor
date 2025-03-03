@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "attack_executor"
-version = "0.1.0"
+version = "0.1.2"
 authors = [
     {name = "Lexus Wang", email = "lingzhiwang2025@u.northwestern.edu"},
 ]
@@ -13,5 +13,6 @@ readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT"}
 dependencies = [
-    "sliver-py>=0.0.19"
+    "sliver-py>=0.0.19",
+    "pymetasploit3>=1.0.6"
 ]
