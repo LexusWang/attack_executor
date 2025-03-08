@@ -11,18 +11,21 @@ class ShellExecutor:
                         command):
         result = subprocess.run(command, shell=True, capture_output=True, text=True)
 
-        # result.stdout 保存了标准输出
-        print("Standard Output:")
-        print(result.stdout)
+        # # result.stdout
+        # print("Standard Output:")
+        # print(result.stdout)
 
-        # result.stderr 保存了标准错误
-        print("Standard Error:")
-        print(result.stderr)
+        # # result.stderr
+        # print("Standard Error:")
+        # print(result.stderr)
 
-        # result.returncode 是返回码，通常 0 表示执行成功
-        print("Return Code", result.returncode)
+        # # result.returncode Usually 0 means successful execution
+        # print("Return Code", result.returncode)
 
-se = ShellExecutor()
-se.execute_command(command = "ls -l")
+        return result.stdout, result.stderr, result.returncode
+
+if __name__ == "__main__":
+    se = ShellExecutor()
+    se.execute_command(command = "sudo nmap -sS -sV -O -A -p 1-1000 10.129.202.170")
 
 

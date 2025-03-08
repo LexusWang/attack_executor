@@ -1,11 +1,11 @@
-import nmap
+import nmap as pynamp
 
 class NmapExecutor:
     def __init__(self):
         """
         It sets up the initial state by assigning values to instance attributes.
         """
-        self.scanner = nmap.PortScanner()
+        self.scanner = pynamp.PortScanner()
 
     def scan(self,
              target,
@@ -24,9 +24,9 @@ class NmapExecutor:
                 for port in ports:
                     print("Port: ", port, "State: ", self.scanner[host][proto][port]['state'])
                     
-                    
-nmape = NmapExecutor()
-nmape.scan(target="10.10.10.3",
+if __name__ == "__main__":            
+    nmape = NmapExecutor()
+    nmape.scan(target="192.168.56.15",
            options = "-sS -sV -O -A -p 1-1000")
 
 
