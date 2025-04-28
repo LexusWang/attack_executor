@@ -1,3 +1,6 @@
+<!-- [![Release](https://img.shields.io/badge/dynamic/json?color=blue&label=Release&query=tag_name&url=https%5B%5D)](https:%5B%5D) -->
+![License](https://img.shields.io/github/license/LexusWang/attack_executor)
+
 # Attack Executor
 Attack Executor is a standardized toolkit for conducting cyberattacks and penetration testing. Our goal is to define a standardized approach to use the common tools involved in cyberattacks and penetration tests, thereby increasing the efficiency of attack execution and prepare for an LLM Agent capable of automated penetration testing and red-team simulations.
 
