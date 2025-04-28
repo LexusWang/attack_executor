@@ -4,10 +4,11 @@ Attack Executor is a standardized toolkit for conducting cyberattacks and penetr
 ## Installation
 In order to use Attack Executor, please install the Python package using
 ```
-pip install -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple attack-executor==0.1.2
+pip install attack-executor
 ```
 
-You also need to install the tools that will be used by Attack Executor. For now, Attack Executor supports the following tools:
+You also need to install the tools that will be used by Attack Executor.
+For now, Attack Executor supports the following tools:
 - [Metasploit](#metasploit)
 - [Sliver](#sliver)
 - Nmap
