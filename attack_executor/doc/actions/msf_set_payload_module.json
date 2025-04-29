@@ -1,0 +1,23 @@
+{
+    "ActionName": "msf_set_payload_module",
+    "Description": "This action aims to set the payload module in Metasploit.",
+    "ExecutorName": "attack_executor.exploit.Metasploit.MetasploitExecutor",
+    "FunctionName": "set_payload_module",
+    "Parameters": [
+        {
+            "Name":"payload_module_name",
+            "Description": "The name of the Metasploit payload module.",
+            "Default": null
+        },
+        {
+            "Name":"listening_host",
+            "Description": "The IP address of the host listening to the payload callback.",
+            "Default": null
+        },
+        {
+            "Name":"listening_port",
+            "Description": "The port number of the listening host.",
+            "Default": null
+        }
+    ]
+}
