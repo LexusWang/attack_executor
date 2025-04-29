@@ -1,0 +1,18 @@
+{
+    "ActionName": "",
+    "Description": "",
+    "ExecutorName": "",
+    "FunctionName": "",
+    "Parameters": [
+        {
+            "Name":"",
+            "Description": "",
+            "Default": ""
+        },
+        {
+            "Name":"",
+            "Description": "",
+            "Default": ""
+        }
+    ]
+}
