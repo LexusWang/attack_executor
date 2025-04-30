@@ -4,6 +4,19 @@
 # Attack Executor
 Attack Executor is a standardized toolkit for conducting cyberattacks and penetration testing. Our goal is to define a standardized approach to use the common tools involved in cyberattacks and penetration tests, thereby increasing the efficiency of attack execution and prepare for an LLM Agent capable of automated penetration testing and red-team simulations.
 
+For now, Attack Executor supports the following penetration testing and red teaming tools:
+- Scanning
+    - Nmap
+    - Gobuster
+- Exploitation
+    - Searchsploit
+    - [Metasploit](#metasploit)
+- Privilege Escalation
+    - Linpeas
+- Post-exploitation
+    - [Sliver](#sliver)
+
+
 ## Installation
 In order to use Attack Executor, please install the Python package using
 ```
@@ -11,10 +24,12 @@ pip install attack-executor
 ```
 
 You also need to install the tools that will be used by Attack Executor.
-For now, Attack Executor supports the following tools:
+Details can be found here:
 - [Metasploit](#metasploit)
 - [Sliver](#sliver)
 - Nmap
+
+We are preparing and will provide a script to automatically install all dependencies.
 
 ## Sliver
 
