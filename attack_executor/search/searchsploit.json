@@ -1,0 +1,13 @@
+{
+    "ActionName": "searchsploit",
+    "Description": "This action takes the XML output from nmap scan, parse it, and find all (or --limit) exploitations using the tool searchsploit",
+    "ExecutorName": "attack_executor.search.searchsploit.SearchsploitExecutor",
+    "FunctionName": "search",
+    "Parameters": [
+        {
+            "Name":"target",
+            "Description": "The IP address of the target host to be scanned.",
+            "Default": null
+        }
+    ]
+}
