@@ -1,27 +1,47 @@
-Metadata-Version: 2.4
+Metadata-Version: 2.1
 Name: attack_executor
-Version: 0.2.2
+Version: 0.2.3
 Summary: This library provides standard Python APIs to interact with common penetration testing and cyberattack tools, enabling automated penetration testing, red team operations, and development of cybersecurity-related LLM agents.
 Author-email: Lexus Wang <lingzhiwang2025@u.northwestern.edu>
 License: MIT
 Requires-Python: >=3.11
 Description-Content-Type: text/markdown
+License-File: LICENSE
 Requires-Dist: sliver-py>=0.0.19
 Requires-Dist: pymetasploit3>=1.0.6
+
+<!-- [![Release](https://img.shields.io/badge/dynamic/json?color=blue&label=Release&query=tag_name&url=https%5B%5D)](https:%5B%5D) -->
+![License](https://img.shields.io/github/license/LexusWang/attack_executor)
 
 # Attack Executor
 Attack Executor is a standardized toolkit for conducting cyberattacks and penetration testing. Our goal is to define a standardized approach to use the common tools involved in cyberattacks and penetration tests, thereby increasing the efficiency of attack execution and prepare for an LLM Agent capable of automated penetration testing and red-team simulations.
 
+For now, Attack Executor supports the following penetration testing and red teaming tools:
+- Scanning
+    - Nmap
+    - Gobuster
+- Exploitation
+    - Searchsploit
+    - [Metasploit](#metasploit)
+- Privilege Escalation
+    - Linpeas
+- Post-exploitation
+    - [Sliver](#sliver)
+
+
 ## Installation
 In order to use Attack Executor, please install the Python package using
 ```
-pip install -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple attack-executor==0.1.2
+pip install attack-executor
 ```
 
-You also need to install the tools that will be used by Attack Executor. For now, Attack Executor supports the following tools:
+You also need to install the tools that will be used by Attack Executor.
+Details can be found here:
 - [Metasploit](#metasploit)
 - [Sliver](#sliver)
 - Nmap
+
+We are preparing and will provide a script to automatically install all dependencies.
 
 ## Sliver
 

@@ -1,3 +1,4 @@
+LICENSE
 README.md
 pyproject.toml
 attack_executor/__init__.py
@@ -14,7 +15,10 @@ attack_executor/exploit/test1.py
 attack_executor/others/passwordGuesser.py
 attack_executor/post_exploit/Sliver.py
 attack_executor/priviledgeEscalation/Linpeas.py
+attack_executor/scan/__init__.py
+attack_executor/scan/gobuster.py
 attack_executor/scan/nmap.py
 attack_executor/scan/nuclei.py
 attack_executor/search/exploitdb.py
+attack_executor/search/searchsploit.py
 test/test.py
