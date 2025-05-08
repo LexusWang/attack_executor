@@ -1,0 +1,3 @@
+admin
+cgi-bin
+hacker
