@@ -5,16 +5,16 @@ Sorted by CVSS v3.0 Base Score (Highest First)
 
 SCAN INFORMATION
 --------------------
-Scan Name: RawScan_10.129.175.161_1748490954
-Target: 10.129.175.161
-Scan Start: 1748490955
-Scan End: 1748491163
-Data Collection: 2025-05-28T22:59:26.688531
+Scan Name: RawScan_10.129.45.100_1748552248
+Target: 10.129.45.100
+Scan Start: 1748552248
+Scan End: 1748552736
+Data Collection: 2025-05-29T16:06:00.621039
 
 SUMMARY
 --------------------
 Total Vulnerabilities with Exploit Frameworks: 1
-HIGH: 1
+CRITICAL: 1
 With CVSS v3.0 Scores: 0
 With CVSS v2.0 Scores: 1
 Total Unique CVEs: 0
@@ -28,28 +28,29 @@ Core Impact: 1 vulnerabilities
 VULNERABILITIES WITH EXPLOIT FRAMEWORKS
 ============================================================
 
-[1] HIGH - MS17-010: Security Update for Microsoft Windows SMB Server (4013389) (ETERNALBLUE) (ETERNALCHAMPION) (ETERNALROMANCE) (ETERNALSYNERGY) (WannaCry) (EternalRocks) (Petya) (uncredentialed check) | CVSS v2.0: 9.3
-Host: 10.129.175.161 | Plugin ID: 97833
-[CVSS v2.0] Score: 9.3
-[CVSS v2.0] Vector: CVSS2#AV:N/AC:M/Au:N/C:C/I:C/A:C
+[1] CRITICAL - Microsoft Windows Server 2003 IIS 6.0 WebDAV PROPFIND Request Handling RCE (EXPLODINGCAN) | CVSS v2.0: 10.0
+Host: 10.129.45.100 | Plugin ID: 99523
+[CVSS v2.0] Score: 10.0
+[CVSS v2.0] Vector: CVSS2#AV:N/AC:L/Au:N/C:C/I:C/A:C
 [CPE] CPE: cpe:/o:microsoft:windows
+cpe:/a:microsoft:iis
 [EXPLOIT FRAMEWORKS] Available frameworks:
   + Metasploit:
-    - SMB DOUBLEPULSAR Remote Code Execution
+    - Microsoft IIS WebDav ScStoragePathFromUrl Overflow
   + CANVAS:
     - Package: CANVAS
   + Core Impact:
     - Available
 [EXPLOIT] Exploit Ease: Exploits are available
-[RISK] Risk Factor: High
+[RISK] Risk Factor: Critical
 [NEWS] In the news: true
-[TIMELINE] Timeline: Vuln Published: 2017/03/14 | Patch Available: 2017/03/14
+[TIMELINE] Timeline: Vuln Published: 2017/03/26
 ------------------------------------------------------------
 
 METASPLOIT EXPLOITATION TARGETS
 ========================================
-Target: 10.129.175.161 - MS17-010: Security Update for Microsoft Windows SMB Server (4013389) (ETERNALBLUE) (ETERNALCHAMPION) (ETERNALROMANCE) (ETERNALSYNERGY) (WannaCry) (EternalRocks) (Petya) (uncredentialed check) (CVSS: 9.3)
-  Metasploit Exploit: SMB DOUBLEPULSAR Remote Code Execution
-  # search SMB DOUBLEPULSAR Remote
-  # search MS17-010: Security Update
-  # set RHOSTS 10.129.175.161
+Target: 10.129.45.100 - Microsoft Windows Server 2003 IIS 6.0 WebDAV PROPFIND Request Handling RCE (EXPLODINGCAN) (CVSS: 10.0)
+  Metasploit Exploit: Microsoft IIS WebDav ScStoragePathFromUrl Overflow
+  # search Microsoft IIS WebDav
+  # search Microsoft Windows Server
+  # set RHOSTS 10.129.45.100

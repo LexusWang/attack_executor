@@ -1,0 +1,2740 @@
+{
+  "scan_info": {
+    "name": "RawScan_10.129.44.65_1748550190",
+    "scan_type": "local",
+    "no_target": false,
+    "hasaudittrail": true,
+    "severity_processed": "202502210012",
+    "alt_targets_used": false,
+    "migrated": 0,
+    "targets": "10.129.44.65",
+    "scanner_end": 1748550407,
+    "scanner_start": 1748550190,
+    "severity_base_selections": [
+      {
+        "display": "CVSS v2.0",
+        "value": "cvss_v2"
+      },
+      {
+        "display": "CVSS v3.0",
+        "value": "cvss_v3"
+      },
+      {
+        "display": "CVSS v4.0",
+        "value": "cvss_v4"
+      },
+      {
+        "display": "Default (CVSS v3.0)",
+        "value": "system_default"
+      }
+    ],
+    "haskb": true,
+    "offline": false,
+    "node_name": null,
+    "scan_start_timestamp": "1748550190",
+    "control": true,
+    "policy_template_uuid": "731a8e52-3ea6-a291-ec0a-d2ff0619c19d7bd788d6be818b65",
+    "uuid": "fc2b2b89-0a55-a187-7539-69059dfc315148de05a078fb0f51",
+    "node_host": null,
+    "current_severity_base_display": "CVSS v3.0",
+    "timestamp": 1748550411,
+    "policy": "Basic Network Scan",
+    "hostcount": 1,
+    "folder_id": 3,
+    "current_severity_base": "cvss_v3",
+    "license_info": {
+      "trimmed": null,
+      "limit": 2147483647
+    },
+    "status": "completed",
+    "scan_start": 1748550190,
+    "pci-can-upload": false,
+    "scan_end": 1748550411,
+    "isWas": null,
+    "object_id": 109,
+    "node_id": null,
+    "edit_allowed": true,
+    "acls": [
+      {
+        "permissions": 0,
+        "owner": null,
+        "display_name": null,
+        "name": null,
+        "id": null,
+        "type": "default"
+      },
+      {
+        "permissions": 128,
+        "owner": 1,
+        "display_name": "root",
+        "name": "root",
+        "id": 1,
+        "type": "user"
+      }
+    ],
+    "scanner_name": "Local Scanner",
+    "user_permissions": 128,
+    "selected_severity_base": "system_default",
+    "scan_end_timestamp": "1748550407",
+    "scan_group": null
+  },
+  "hosts": [
+    {
+      "host_info": {
+        "totalchecksconsidered": 193997,
+        "numchecksconsidered": 193997,
+        "scanprogresstotal": 100,
+        "scanprogresscurrent": 100,
+        "host_index": 0,
+        "score": 38,
+        "severitycount": {
+          "item": [
+            {
+              "count": 28,
+              "severitylevel": 0
+            },
+            {
+              "count": 1,
+              "severitylevel": 1
+            },
+            {
+              "count": 0,
+              "severitylevel": 2
+            },
+            {
+              "count": 0,
+              "severitylevel": 3
+            },
+            {
+              "count": 0,
+              "severitylevel": 4
+            },
+            {
+              "count": 0,
+              "severitylevel": 5
+            },
+            {
+              "count": 0,
+              "severitylevel": 6
+            },
+            {
+              "count": 0,
+              "severitylevel": 7
+            },
+            {
+              "count": 0,
+              "severitylevel": 8
+            },
+            {
+              "count": 0,
+              "severitylevel": 9
+            }
+          ]
+        },
+        "progress": "100-100/193997-193997",
+        "offline_critical": 0,
+        "offline_high": 0,
+        "offline_medium": 0,
+        "offline_low": 0,
+        "offline_info": 0,
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 1,
+        "info": 28,
+        "severity": 29,
+        "host_id": 2,
+        "hostname": "10.129.44.65"
+      },
+      "detailed_vulnerabilities": {
+        "vulnerabilities": [
+          {
+            "count": 1,
+            "score": null,
+            "vuln_index": 43,
+            "plugin_name": "Traceroute Information",
+            "severity": 0,
+            "vpr_score": null,
+            "plugin_id": 10287,
+            "severity_index": 0,
+            "cpe": null,
+            "offline": false,
+            "plugin_family": "General",
+            "snoozed": 0,
+            "epss_score": null,
+            "host_id": 2
+          },
+          {
+            "count": 1,
+            "score": null,
+            "vuln_index": 42,
+            "plugin_name": "TCP/IP Timestamps Supported",
+            "severity": 0,
+            "vpr_score": null,
+            "plugin_id": 25220,
+            "severity_index": 1,
+            "cpe": null,
+            "offline": false,
+            "plugin_family": "General",
+            "snoozed": 0,
+            "epss_score": null,
+            "host_id": 2
+          },
+          {
+            "count": 1,
+            "score": null,
+            "vuln_index": 41,
+            "plugin_name": "Target Credential Status by Authentication Protocol - No Credentials Provided",
+            "severity": 0,
+            "vpr_score": null,
+            "plugin_id": 110723,
+            "severity_index": 2,
+            "cpe": null,
+            "offline": false,
+            "plugin_family": "Settings",
+            "snoozed": 0,
+            "epss_score": null,
+            "host_id": 2
+          },
+          {
+            "count": 1,
+            "score": null,
+            "vuln_index": 40,
+            "plugin_name": "SSH Server Type and Version Information",
+            "severity": 0,
+            "vpr_score": null,
+            "plugin_id": 10267,
+            "severity_index": 3,
+            "cpe": null,
+            "offline": false,
+            "plugin_family": "Service detection",
+            "snoozed": 0,
+            "epss_score": null,
+            "host_id": 2
+          },
+          {
+            "count": 1,
+            "score": null,
+            "vuln_index": 39,
+            "plugin_name": "SSH Protocol Versions Supported",
+            "severity": 0,
+            "vpr_score": null,
+            "plugin_id": 10881,
+            "severity_index": 4,
+            "cpe": null,
+            "offline": false,
+            "plugin_family": "General",
+            "snoozed": 0,
+            "epss_score": null,
+            "host_id": 2
+          },
+          {
+            "count": 1,
+            "score": null,
+            "vuln_index": 38,
+            "plugin_name": "SSH Password Authentication Accepted",
+            "severity": 0,
+            "vpr_score": null,
+            "plugin_id": 149334,
+            "severity_index": 5,
+            "cpe": null,
+            "offline": false,
+            "plugin_family": "Service detection",
+            "snoozed": 0,
+            "epss_score": null,
+            "host_id": 2
+          },
+          {
+            "count": 1,
+            "score": null,
+            "vuln_index": 36,
+            "plugin_name": "Record Route",
+            "severity": 0,
+            "vpr_score": null,
+            "plugin_id": 12264,
+            "severity_index": 6,
+            "cpe": null,
+            "offline": false,
+            "plugin_family": "General",
+            "snoozed": 0,
+            "epss_score": null,
+            "host_id": 2
+          },
+          {
+            "count": 1,
+            "score": null,
+            "vuln_index": 35,
+            "plugin_name": "OS Security Patch Assessment Not Available",
+            "severity": 0,
+            "vpr_score": null,
+            "plugin_id": 117886,
+            "severity_index": 7,
+            "cpe": null,
+            "offline": false,
+            "plugin_family": "Settings",
+            "snoozed": 0,
+            "epss_score": null,
+            "host_id": 2
+          },
+          {
+            "count": 1,
+            "score": null,
+            "vuln_index": 34,
+            "plugin_name": "OS Identification",
+            "severity": 0,
+            "vpr_score": null,
+            "plugin_id": 11936,
+            "severity_index": 8,
+            "cpe": null,
+            "offline": false,
+            "plugin_family": "General",
+            "snoozed": 0,
+            "epss_score": null,
+            "host_id": 2
+          },
+          {
+            "count": 1,
+            "score": null,
+            "vuln_index": 33,
+            "plugin_name": "OpenSSH Detection",
+            "severity": 0,
+            "vpr_score": null,
+            "plugin_id": 181418,
+            "severity_index": 9,
+            "cpe": "cpe:/a:openbsd:openssh",
+            "offline": false,
+            "plugin_family": "Misc.",
+            "snoozed": 0,
+            "epss_score": null,
+            "host_id": 2
+          },
+          {
+            "count": 1,
+            "score": null,
+            "vuln_index": 32,
+            "plugin_name": "nginx HTTP Server Detection",
+            "severity": 0,
+            "vpr_score": null,
+            "plugin_id": 106375,
+            "severity_index": 10,
+            "cpe": "cpe:/a:nginx:nginx",
+            "offline": false,
+            "plugin_family": "Web Servers",
+            "snoozed": 0,
+            "epss_score": null,
+            "host_id": 2
+          },
+          {
+            "count": 1,
+            "score": null,
+            "vuln_index": 30,
+            "plugin_name": "Nessus Scan Information",
+            "severity": 0,
+            "vpr_score": null,
+            "plugin_id": 19506,
+            "severity_index": 11,
+            "cpe": null,
+            "offline": false,
+            "plugin_family": "Settings",
+            "snoozed": 0,
+            "epss_score": null,
+            "host_id": 2
+          },
+          {
+            "count": 1,
+            "score": null,
+            "vuln_index": 26,
+            "plugin_name": "Eclipse Jetty Web Server Detection",
+            "severity": 0,
+            "vpr_score": null,
+            "plugin_id": 194915,
+            "severity_index": 12,
+            "cpe": "cpe:/a:eclipse:jetty",
+            "offline": false,
+            "plugin_family": "Web Servers",
+            "snoozed": 0,
+            "epss_score": null,
+            "host_id": 2
+          },
+          {
+            "count": 1,
+            "score": null,
+            "vuln_index": 25,
+            "plugin_name": "Device Type",
+            "severity": 0,
+            "vpr_score": null,
+            "plugin_id": 54615,
+            "severity_index": 13,
+            "cpe": null,
+            "offline": false,
+            "plugin_family": "General",
+            "snoozed": 0,
+            "epss_score": null,
+            "host_id": 2
+          },
+          {
+            "count": 1,
+            "score": null,
+            "vuln_index": 24,
+            "plugin_name": "Common Platform Enumeration (CPE)",
+            "severity": 0,
+            "vpr_score": null,
+            "plugin_id": 45590,
+            "severity_index": 14,
+            "cpe": null,
+            "offline": false,
+            "plugin_family": "General",
+            "snoozed": 0,
+            "epss_score": null,
+            "host_id": 2
+          },
+          {
+            "count": 1,
+            "score": null,
+            "vuln_index": 23,
+            "plugin_name": "Backported Security Patch Detection (SSH)",
+            "severity": 0,
+            "vpr_score": null,
+            "plugin_id": 39520,
+            "severity_index": 15,
+            "cpe": null,
+            "offline": false,
+            "plugin_family": "General",
+            "snoozed": 0,
+            "epss_score": null,
+            "host_id": 2
+          },
+          {
+            "count": 1,
+            "score": null,
+            "vuln_index": 22,
+            "plugin_name": "Advanced Message Queuing Protocol Detection",
+            "severity": 0,
+            "vpr_score": null,
+            "plugin_id": 62349,
+            "severity_index": 16,
+            "cpe": "cpe:/a:spring-amqp_project:spring-amqp",
+            "offline": false,
+            "plugin_family": "Service detection",
+            "snoozed": 0,
+            "epss_score": null,
+            "host_id": 2
+          },
+          {
+            "count": 2,
+            "score": null,
+            "vuln_index": 28,
+            "plugin_name": "HyperText Transfer Protocol (HTTP) Information",
+            "severity": 0,
+            "vpr_score": null,
+            "plugin_id": 24260,
+            "severity_index": 17,
+            "cpe": null,
+            "offline": false,
+            "plugin_family": "Web Servers",
+            "snoozed": 0,
+            "epss_score": null,
+            "host_id": 2
+          },
+          {
+            "count": 2,
+            "score": null,
+            "vuln_index": 27,
+            "plugin_name": "HTTP Server Type and Version",
+            "severity": 0,
+            "vpr_score": null,
+            "plugin_id": 10107,
+            "severity_index": 18,
+            "cpe": null,
+            "offline": false,
+            "plugin_family": "Web Servers",
+            "snoozed": 0,
+            "epss_score": null,
+            "host_id": 2
+          },
+          {
+            "count": 3,
+            "score": null,
+            "vuln_index": 37,
+            "plugin_name": "Service Detection",
+            "severity": 0,
+            "vpr_score": null,
+            "plugin_id": 22964,
+            "severity_index": 19,
+            "cpe": null,
+            "offline": false,
+            "plugin_family": "Service detection",
+            "snoozed": 0,
+            "epss_score": null,
+            "host_id": 2
+          },
+          {
+            "count": 4,
+            "score": null,
+            "vuln_index": 31,
+            "plugin_name": "Nessus SYN scanner",
+            "severity": 0,
+            "vpr_score": null,
+            "plugin_id": 11219,
+            "severity_index": 20,
+            "cpe": null,
+            "offline": false,
+            "plugin_family": "Port scanners",
+            "snoozed": 0,
+            "epss_score": null,
+            "host_id": 2
+          },
+          {
+            "isFallBackScore": true,
+            "count": 1,
+            "score": "2.1",
+            "vuln_index": 29,
+            "plugin_name": "ICMP Timestamp Request Remote Date Disclosure",
+            "severity": 1,
+            "vpr_score": null,
+            "plugin_id": 10114,
+            "severity_index": 21,
+            "cpe": null,
+            "offline": false,
+            "plugin_family": "General",
+            "snoozed": 0,
+            "epss_score": null,
+            "host_id": 2,
+            "fallBackScoreTip": "CVSS v2.0 score"
+          }
+        ],
+        "compliance": [],
+        "info": {
+          "operating-system": "Linux Kernel 2.6",
+          "host-ip": "10.129.44.65",
+          "host_start": "Thu May 29 15:23:10 2025",
+          "host_end": "Thu May 29 15:26:47 2025"
+        }
+      },
+      "plugin_details": {
+        "10287": {
+          "outputs": [
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "0 / udp / ": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "For your information, here is the traceroute from 10.10.14.21 to 10.129.44.65 : \n10.10.14.21\n10.10.14.1\n10.129.44.65\n\nHop Count: 2\n"
+            }
+          ],
+          "info": {
+            "plugindescription": {
+              "severity": 0,
+              "pluginname": "Traceroute Information",
+              "pluginattributes": {
+                "risk_information": {
+                  "risk_factor": "None"
+                },
+                "plugin_name": "Traceroute Information",
+                "plugin_information": {
+                  "plugin_version": "1.71",
+                  "plugin_id": 10287,
+                  "plugin_type": "remote",
+                  "plugin_publication_date": "1999/11/27",
+                  "plugin_family": "General",
+                  "plugin_modification_date": "2023/12/04"
+                },
+                "solution": null,
+                "fname": "traceroute.nasl",
+                "synopsis": "It was possible to obtain traceroute information.",
+                "script_copyright": "This script is Copyright (C) 1999-2023 Tenable Network Security, Inc.",
+                "description": "Makes a traceroute to the remote host."
+              },
+              "pluginfamily": "General",
+              "pluginid": "10287"
+            }
+          }
+        },
+        "25220": {
+          "outputs": [
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "0 / tcp / ": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": null
+            }
+          ],
+          "info": {
+            "plugindescription": {
+              "severity": 0,
+              "pluginname": "TCP/IP Timestamps Supported",
+              "pluginattributes": {
+                "risk_information": {
+                  "risk_factor": "None"
+                },
+                "see_also": [
+                  "http://www.ietf.org/rfc/rfc1323.txt"
+                ],
+                "plugin_name": "TCP/IP Timestamps Supported",
+                "plugin_information": {
+                  "plugin_version": "1.22",
+                  "plugin_id": 25220,
+                  "plugin_type": "remote",
+                  "plugin_publication_date": "2007/05/16",
+                  "plugin_family": "General",
+                  "plugin_modification_date": "2023/10/17"
+                },
+                "solution": null,
+                "fname": "tcp_timestamps.nasl",
+                "synopsis": "The remote service implements TCP timestamps.",
+                "script_copyright": "This script is Copyright (C) 2007-2023 Tenable Network Security, Inc.",
+                "description": "The remote host implements TCP timestamps, as defined by RFC1323.  A side effect of this feature is that the uptime of the remote host can sometimes be computed."
+              },
+              "pluginfamily": "General",
+              "pluginid": "25220"
+            }
+          }
+        },
+        "110723": {
+          "outputs": [
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "0 / tcp / ": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "SSH was detected on port 22 but no credentials were provided.\nSSH local checks were not enabled.\n\n"
+            }
+          ],
+          "info": {
+            "plugindescription": {
+              "severity": 0,
+              "pluginname": "Target Credential Status by Authentication Protocol - No Credentials Provided",
+              "pluginattributes": {
+                "script_copyright": "This script is Copyright (C) 2018-2024 and is owned by Tenable, Inc. or an Affiliate thereof.",
+                "synopsis": "Nessus was able to find common ports used for local checks, however, no credentials were provided in the scan policy.",
+                "description": "Nessus was not able to successfully authenticate directly to the remote target on an available authentication protocol. Nessus was able to connect to the remote port and identify that the service running on the port supports an authentication protocol, but Nessus failed to authenticate to the remote service using the provided credentials. There may have been a protocol failure that prevented authentication from being attempted or all of the provided credentials for the authentication protocol may be invalid. See plugin output for error details.\n\nPlease note the following :\n\n- This plugin reports per protocol, so it is possible for   valid credentials to be provided for one protocol and not   another. For example, authentication may succeed via SSH   but fail via SMB, while no credentials were provided for   an available SNMP service.\n\n- Providing valid credentials for all available   authentication protocols may improve scan coverage, but   the value of successful authentication for a given   protocol may vary from target to target depending upon   what data (if any) is gathered from the target via that   protocol. For example, successful authentication via SSH   is more valuable for Linux targets than for Windows   targets, and likewise successful authentication via SMB   is more valuable for Windows targets than for Linux   targets.",
+                "risk_information": {
+                  "risk_factor": "None"
+                },
+                "ref_information": {
+                  "ref": [
+                    {
+                      "name": "iavb",
+                      "values": {
+                        "value": [
+                          "0001-B-0504"
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "plugin_name": "Target Credential Status by Authentication Protocol - No Credentials Provided",
+                "fname": "no_local_checks_credentials.nasl",
+                "plugin_information": {
+                  "plugin_version": "1.20",
+                  "plugin_id": 110723,
+                  "plugin_type": "summary",
+                  "plugin_publication_date": "2018/06/27",
+                  "plugin_family": "Settings",
+                  "plugin_modification_date": "2024/04/19"
+                },
+                "iavb": "0001-B-0504",
+                "solution": null
+              },
+              "pluginfamily": "Settings",
+              "pluginid": "110723"
+            }
+          }
+        },
+        "10267": {
+          "outputs": [
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "22 / tcp / ssh": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "\nSSH version : SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.4\nSSH supported authentication : publickey,password\n"
+            }
+          ],
+          "info": {
+            "plugindescription": {
+              "severity": 0,
+              "pluginname": "SSH Server Type and Version Information",
+              "pluginattributes": {
+                "script_copyright": "This script is Copyright (C) 2002-2024 and is owned by Tenable, Inc. or an Affiliate thereof.",
+                "synopsis": "An SSH server is listening on this port.",
+                "description": "It is possible to obtain information about the remote SSH server by sending an empty authentication request.",
+                "risk_information": {
+                  "risk_factor": "None"
+                },
+                "iavt": "0001-T-0933",
+                "ref_information": {
+                  "ref": [
+                    {
+                      "name": "iavt",
+                      "values": {
+                        "value": [
+                          "0001-T-0933"
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "plugin_name": "SSH Server Type and Version Information",
+                "fname": "ssh_detect.nasl",
+                "plugin_information": {
+                  "plugin_version": "2.31",
+                  "plugin_id": 10267,
+                  "plugin_type": "remote",
+                  "plugin_publication_date": "1999/10/12",
+                  "plugin_family": "Service detection",
+                  "plugin_modification_date": "2024/07/24"
+                },
+                "dependency": "ssh_check_compression.nasl",
+                "required_port": "22",
+                "solution": null,
+                "vuln_information": {
+                  "asset_inventory": "True"
+                }
+              },
+              "pluginfamily": "Service detection",
+              "pluginid": "10267"
+            }
+          }
+        },
+        "10881": {
+          "outputs": [
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "22 / tcp / ssh": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "The remote SSH daemon supports the following versions of the\nSSH protocol :\n\n  - 1.99\n  - 2.0\n"
+            }
+          ],
+          "info": {
+            "plugindescription": {
+              "severity": 0,
+              "pluginname": "SSH Protocol Versions Supported",
+              "pluginattributes": {
+                "script_copyright": "This script is Copyright (C) 2007-2024 and is owned by Tenable, Inc. or an Affiliate thereof.",
+                "synopsis": "A SSH server is running on the remote host.",
+                "description": "This plugin determines the versions of the SSH protocol supported by the remote SSH daemon.",
+                "risk_information": {
+                  "risk_factor": "None"
+                },
+                "plugin_name": "SSH Protocol Versions Supported",
+                "fname": "ssh_proto_version.nasl",
+                "dependency": "ssh_detect.nasl",
+                "required_port": "22",
+                "plugin_information": {
+                  "plugin_version": "1.40",
+                  "plugin_id": 10881,
+                  "plugin_type": "remote",
+                  "plugin_publication_date": "2002/03/06",
+                  "plugin_family": "General",
+                  "plugin_modification_date": "2024/07/24"
+                },
+                "solution": null,
+                "vuln_information": {
+                  "asset_inventory": "True"
+                }
+              },
+              "pluginfamily": "General",
+              "pluginid": "10881"
+            }
+          }
+        },
+        "149334": {
+          "outputs": [
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "22 / tcp / ssh": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": null
+            }
+          ],
+          "info": {
+            "plugindescription": {
+              "severity": 0,
+              "pluginname": "SSH Password Authentication Accepted",
+              "pluginattributes": {
+                "script_copyright": "This script is Copyright (C) 2021 and is owned by Tenable, Inc. or an Affiliate thereof.",
+                "synopsis": "The SSH server on the remote host accepts password authentication.",
+                "description": "The SSH server on the remote host accepts password authentication.",
+                "risk_information": {
+                  "risk_factor": "None"
+                },
+                "plugin_name": "SSH Password Authentication Accepted",
+                "see_also": [
+                  "https://tools.ietf.org/html/rfc4252#section-8"
+                ],
+                "fname": "ssh_password_auth.nasl",
+                "plugin_information": {
+                  "plugin_version": "1.1",
+                  "plugin_id": 149334,
+                  "plugin_type": "remote",
+                  "plugin_publication_date": "2021/05/07",
+                  "plugin_family": "Service detection",
+                  "plugin_modification_date": "2021/05/07"
+                },
+                "dependency": "ssh_detect.nasl",
+                "required_port": "22",
+                "solution": null
+              },
+              "pluginfamily": "Service detection",
+              "pluginid": "149334"
+            }
+          }
+        },
+        "12264": {
+          "outputs": [
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "0 / icmp / ": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "Here is the route recorded between 10.10.14.21 and 10.129.44.65 :\n10.129.0.1\n10.129.44.65\n10.129.44.65\n10.10.14.1\n"
+            }
+          ],
+          "info": {
+            "plugindescription": {
+              "severity": 0,
+              "pluginname": "Record Route",
+              "pluginattributes": {
+                "risk_information": {
+                  "risk_factor": "None"
+                },
+                "plugin_name": "Record Route",
+                "plugin_information": {
+                  "plugin_version": "1.13",
+                  "plugin_id": 12264,
+                  "plugin_type": "remote",
+                  "plugin_publication_date": "2004/06/09",
+                  "plugin_family": "General",
+                  "plugin_modification_date": "2019/03/06"
+                },
+                "solution": null,
+                "fname": "record_route.nasl",
+                "synopsis": "Record route",
+                "script_copyright": "This script is Copyright (C) 2004-2019 Tenable Network Security, Inc.",
+                "description": "It is possible to obtain the traceroute to the remote host by sending packets with the 'Record Route' option set.  It is a complement to traceroute."
+              },
+              "pluginfamily": "General",
+              "pluginid": "12264"
+            }
+          }
+        },
+        "117886": {
+          "outputs": [
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "0 / tcp / ": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "\nThe following issues were reported :\n\n  - Plugin      : no_local_checks_credentials.nasl\n    Plugin ID   : 110723\n    Plugin Name : Target Credential Status by Authentication Protocol - No Credentials Provided\n    Message     : \nCredentials were not provided for detected SSH service.\n"
+            }
+          ],
+          "info": {
+            "plugindescription": {
+              "severity": 0,
+              "pluginname": "OS Security Patch Assessment Not Available",
+              "pluginattributes": {
+                "synopsis": "OS Security Patch Assessment is not available.",
+                "agent": "all",
+                "script_copyright": "This script is Copyright (C) 2018-2021 and is owned by Tenable, Inc. or an Affiliate thereof.",
+                "description": "OS Security Patch Assessment is not available on the remote host.\nThis does not necessarily indicate a problem with the scan.\nCredentials may not have been provided, OS security patch assessment may not be supported for the target, the target may not have been identified, or another issue may have occurred that prevented OS security patch assessment from being available. See plugin output for details.\n\nThis plugin reports non-failure information impacting the availability of OS Security Patch Assessment. Failure information is reported by plugin 21745 : 'OS Security Patch Assessment failed'.  If a target host is not supported for OS Security Patch Assessment, plugin 110695 : 'OS Security Patch Assessment Checks Not Supported' will report concurrently with this plugin.",
+                "risk_information": {
+                  "risk_factor": "None"
+                },
+                "ref_information": {
+                  "ref": [
+                    {
+                      "name": "iavb",
+                      "values": {
+                        "value": [
+                          "0001-B-0515"
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "plugin_name": "OS Security Patch Assessment Not Available",
+                "excluded_key": "HostLevelChecks/local_security_checks_enabled",
+                "fname": "hostlevel_checks_skipped.nasl",
+                "plugin_information": {
+                  "plugin_version": "1.12",
+                  "plugin_id": 117886,
+                  "plugin_type": "summary",
+                  "plugin_publication_date": "2018/10/02",
+                  "plugin_family": "Settings",
+                  "plugin_modification_date": "2021/07/12"
+                },
+                "dependency": "local_checks_enabled.nasl",
+                "solution": null,
+                "iavb": "0001-B-0515"
+              },
+              "pluginfamily": "Settings",
+              "pluginid": "117886"
+            }
+          }
+        },
+        "11936": {
+          "outputs": [
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "0 / tcp / ": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "\nRemote operating system : Linux Kernel 2.6\nConfidence level : 65\nMethod : SinFP\n\n \nThe remote host is running Linux Kernel 2.6"
+            }
+          ],
+          "info": {
+            "plugindescription": {
+              "severity": 0,
+              "pluginname": "OS Identification",
+              "pluginattributes": {
+                "agent": "all",
+                "script_copyright": "This script is Copyright (C) 2004-2024 and is owned by Tenable, Inc. or an Affiliate thereof.",
+                "synopsis": "It is possible to guess the remote operating system.",
+                "description": "Using a combination of remote probes (e.g., TCP/IP, SMB, HTTP, NTP, SNMP, etc.), it is possible to guess the name of the remote operating system in use. It is also possible sometimes to guess the version of the operating system.",
+                "risk_information": {
+                  "risk_factor": "None"
+                },
+                "plugin_name": "OS Identification",
+                "os_identification": "True",
+                "fname": "os_fingerprint.nasl",
+                "plugin_information": {
+                  "plugin_version": "2.70",
+                  "plugin_id": 11936,
+                  "plugin_type": "combined",
+                  "plugin_publication_date": "2003/12/09",
+                  "plugin_family": "General",
+                  "plugin_modification_date": "2024/10/14"
+                },
+                "dependency": "ibm_tem_init_info.nbin",
+                "solution": null,
+                "vuln_information": {
+                  "asset_inventory": "True"
+                }
+              },
+              "pluginfamily": "General",
+              "pluginid": "11936"
+            }
+          }
+        },
+        "181418": {
+          "outputs": [
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "22 / tcp / ssh": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "\n  Service : ssh\n  Version : 8.9p1\n  Banner  : SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.4\n"
+            }
+          ],
+          "info": {
+            "plugindescription": {
+              "severity": 0,
+              "pluginname": "OpenSSH Detection",
+              "pluginattributes": {
+                "script_copyright": "This script is Copyright (C) 2023-2025 and is owned by Tenable, Inc. or an Affiliate thereof.",
+                "synopsis": "An OpenSSH-based SSH server was detected on the remote host.",
+                "description": "An OpenSSH-based SSH server was detected on the remote host.",
+                "asset_inventory_category": "software_enumeration",
+                "risk_information": {
+                  "risk_factor": "None"
+                },
+                "plugin_name": "OpenSSH Detection",
+                "see_also": [
+                  "https://www.openssh.com/"
+                ],
+                "fname": "openssh_detect.nbin",
+                "plugin_information": {
+                  "plugin_version": "1.86",
+                  "plugin_id": 181418,
+                  "plugin_type": "remote",
+                  "plugin_publication_date": "2023/09/14",
+                  "plugin_family": "Misc.",
+                  "plugin_modification_date": "2025/01/08"
+                },
+                "dependency": "ssh_detect.nasl",
+                "required_port": "22",
+                "solution": null,
+                "vuln_information": {
+                  "cpe": "cpe:/a:openbsd:openssh",
+                  "asset_inventory": "True"
+                }
+              },
+              "pluginfamily": "Misc.",
+              "pluginid": "181418"
+            }
+          }
+        },
+        "106375": {
+          "outputs": [
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "80 / tcp / www": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "\n  URL     : http://10.129.44.65/\n  Version : 1.18.0\n  os      : Ubuntu\n  source  : Server: nginx/1.18.0 (Ubuntu)\n"
+            }
+          ],
+          "info": {
+            "plugindescription": {
+              "severity": 0,
+              "pluginname": "nginx HTTP Server Detection",
+              "pluginattributes": {
+                "synopsis": "The nginx HTTP server was detected on the remote host.",
+                "script_copyright": "This script is Copyright (C) 2018-2023 and is owned by Tenable, Inc. or an Affiliate thereof.",
+                "description": "Nessus was able to detect the nginx HTTP server by looking at the HTTP banner on the remote host.",
+                "asset_inventory_category": "software_enumeration",
+                "risk_information": {
+                  "risk_factor": "None"
+                },
+                "iavt": "0001-T-0677",
+                "ref_information": {
+                  "ref": [
+                    {
+                      "name": "iavt",
+                      "values": {
+                        "value": [
+                          "0001-T-0677"
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "required_key": "www/nginx",
+                "plugin_name": "nginx HTTP Server Detection",
+                "see_also": [
+                  "https://nginx.org/"
+                ],
+                "fname": "nginx_detect.nasl",
+                "plugin_information": {
+                  "plugin_version": "1.7",
+                  "plugin_id": 106375,
+                  "plugin_type": "remote",
+                  "plugin_publication_date": "2018/01/26",
+                  "plugin_family": "Web Servers",
+                  "plugin_modification_date": "2023/05/24"
+                },
+                "dependency": "http_version.nasl",
+                "required_port": "80",
+                "solution": null,
+                "vuln_information": {
+                  "cpe": "cpe:/a:nginx:nginx",
+                  "asset_inventory": "True"
+                }
+              },
+              "pluginfamily": "Web Servers",
+              "pluginid": "106375"
+            }
+          }
+        },
+        "19506": {
+          "outputs": [
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "0 / tcp / ": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "Information about this scan : \n\nNessus version : 10.8.3\nNessus build : 20010\nPlugin feed version : 202502210012\nScanner edition used : Nessus\n\nERROR: Your plugins have not been updated since 2025/2/21\nPerforming a scan with an older plugin set will yield out-of-date results and\nproduce an incomplete audit. Please run nessus-update-plugins to get the\nnewest vulnerability checks from Nessus.org.\n\nScanner OS : LINUX\nScanner distribution : ubuntu1604-x86-64\nScan type : Normal\nScan name : RawScan_10.129.44.65_1748550190\nScan policy used : Basic Network Scan\nScanner IP : 10.10.14.21\nPort scanner(s) : nessus_syn_scanner \nPort range : default\nPing RTT : 49.393 ms\nThorough tests : no\nExperimental tests : no\nScan for Unpatched Vulnerabilities : no\nPlugin debugging enabled : no\nParanoia level : 1\nReport verbosity : 1\nSafe checks : no\nOptimize the test : no\nCredentialed checks : no\nPatch management checks : None\nDisplay superseded patches : yes (supersedence plugin did not launch)\nCGI scanning : disabled\nWeb application tests : disabled\nMax hosts : 256\nMax checks : 5\nRecv timeout : 5\nBackports : Detected\nAllow post-scan editing : Yes\nNessus Plugin Signature Checking : Enabled\nAudit File Signature Checking : Disabled\nScan Start Date : 2025/5/29 15:23 CDT (UTC -05:00)\nScan duration : 216 sec\nScan for malware : no\n"
+            }
+          ],
+          "info": {
+            "plugindescription": {
+              "severity": 0,
+              "pluginname": "Nessus Scan Information",
+              "pluginattributes": {
+                "agent": "all",
+                "script_copyright": "This script is Copyright (C) 2005-2024 and is owned by Tenable, Inc. or an Affiliate thereof.",
+                "synopsis": "This plugin displays information about the Nessus scan.",
+                "description": "This plugin displays, for each tested host, information about the scan itself :\n\n  - The version of the plugin set.\n  - The type of scanner (Nessus or Nessus Home).\n  - The version of the Nessus Engine.\n  - The port scanner(s) used.\n  - The port range scanned.\n  - The ping round trip time \n  - Whether credentialed or third-party patch management     checks are possible.\n  - Whether the display of superseded patches is enabled\n  - The date of the scan.\n  - The duration of the scan.\n  - The number of hosts scanned in parallel.\n  - The number of checks done in parallel.",
+                "risk_information": {
+                  "risk_factor": "None"
+                },
+                "always_run": "1",
+                "plugin_name": "Nessus Scan Information",
+                "fname": "scan_info.nasl",
+                "plugin_information": {
+                  "plugin_version": "1.129",
+                  "plugin_id": 19506,
+                  "plugin_type": "summary",
+                  "plugin_publication_date": "2005/08/26",
+                  "plugin_family": "Settings",
+                  "plugin_modification_date": "2024/12/31"
+                },
+                "dependency": "patches_summary.nbin",
+                "thorough_tests": "true",
+                "solution": null
+              },
+              "pluginfamily": "Settings",
+              "pluginid": "19506"
+            }
+          }
+        },
+        "194915": {
+          "outputs": [
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "0 / tcp / ": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "\n  URL     : http://10.129.44.65:8161/\n  Version : 9.4.39\n  Source  : Server: Jetty(9.4.39.v20210325)\n"
+            }
+          ],
+          "info": {
+            "plugindescription": {
+              "severity": 0,
+              "pluginname": "Eclipse Jetty Web Server Detection",
+              "pluginattributes": {
+                "script_copyright": "This script is Copyright (C) 2024-2025 and is owned by Tenable, Inc. or an Affiliate thereof.",
+                "synopsis": "The Eclipse Jetty web server was detected on the remote host.",
+                "description": "The Eclipse Jetty web server was detected on the remote host.",
+                "asset_inventory_category": "software_enumeration",
+                "risk_information": {
+                  "risk_factor": "None"
+                },
+                "plugin_name": "Eclipse Jetty Web Server Detection",
+                "see_also": [
+                  "https://eclipse.dev/jetty/"
+                ],
+                "fname": "eclipse_jetty_detect.nbin",
+                "plugin_information": {
+                  "plugin_version": "1.12",
+                  "plugin_id": 194915,
+                  "plugin_type": "remote",
+                  "plugin_publication_date": "2024/05/02",
+                  "plugin_family": "Web Servers",
+                  "plugin_modification_date": "2025/01/06"
+                },
+                "dependency": "http_version.nasl",
+                "required_port": "443",
+                "solution": null,
+                "vuln_information": {
+                  "cpe": "cpe:/a:eclipse:jetty",
+                  "asset_inventory": "True"
+                }
+              },
+              "pluginfamily": "Web Servers",
+              "pluginid": "194915"
+            }
+          }
+        },
+        "54615": {
+          "outputs": [
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "0 / tcp / ": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "Remote device type : general-purpose\nConfidence level : 65\n"
+            }
+          ],
+          "info": {
+            "plugindescription": {
+              "severity": 0,
+              "pluginname": "Device Type",
+              "pluginattributes": {
+                "script_copyright": "This script is Copyright (C) 2011-2022 Tenable Network Security, Inc.",
+                "synopsis": "It is possible to guess the remote device type.",
+                "description": "Based on the remote operating system, it is possible to determine what the remote system type is (eg: a printer, router, general-purpose computer, etc).",
+                "risk_information": {
+                  "risk_factor": "None"
+                },
+                "required_key": "Host/OS/Type",
+                "plugin_name": "Device Type",
+                "fname": "device_type.nasl",
+                "dependency": "os_fingerprint.nasl",
+                "plugin_information": {
+                  "plugin_version": "1.2",
+                  "plugin_id": 54615,
+                  "plugin_type": "combined",
+                  "plugin_publication_date": "2011/05/23",
+                  "plugin_family": "General",
+                  "plugin_modification_date": "2022/09/09"
+                },
+                "solution": null
+              },
+              "pluginfamily": "General",
+              "pluginid": "54615"
+            }
+          }
+        },
+        "45590": {
+          "outputs": [
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "0 / tcp / ": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "\nThe remote operating system matched the following CPE : \n\n  cpe:/o:linux:linux_kernel -> Linux Kernel\n\nFollowing application CPE's matched on the remote system : \n\n  cpe:/a:eclipse:jetty:9.4.39 -> Eclipse Jetty\n  cpe:/a:igor_sysoev:nginx:1.18.0 -> Nginx\n  cpe:/a:nginx:nginx:1.18.0 -> Nginx\n  cpe:/a:openbsd:openssh:8.9 -> OpenBSD OpenSSH\n  cpe:/a:openbsd:openssh:8.9p1 -> OpenBSD OpenSSH\n"
+            }
+          ],
+          "info": {
+            "plugindescription": {
+              "severity": 0,
+              "pluginname": "Common Platform Enumeration (CPE)",
+              "pluginattributes": {
+                "agent": "all",
+                "script_copyright": "This script is Copyright (C) 2010-2025 and is owned by Tenable, Inc. or an Affiliate thereof.",
+                "synopsis": "It was possible to enumerate CPE names that matched on the remote system.",
+                "description": "By using information obtained from a Nessus scan, this plugin reports CPE (Common Platform Enumeration) matches for various hardware and software products found on a host. \n\nNote that if an official CPE is not available for the product, this plugin computes the best possible CPE based on the information available from the scan.",
+                "risk_information": {
+                  "risk_factor": "None"
+                },
+                "plugin_name": "Common Platform Enumeration (CPE)",
+                "see_also": [
+                  "http://cpe.mitre.org/",
+                  "https://nvd.nist.gov/products/cpe"
+                ],
+                "fname": "cpe.nbin",
+                "plugin_information": {
+                  "plugin_version": "1.171",
+                  "plugin_id": 45590,
+                  "plugin_type": "combined",
+                  "plugin_publication_date": "2010/04/21",
+                  "plugin_family": "General",
+                  "plugin_modification_date": "2025/01/06"
+                },
+                "solution": null
+              },
+              "pluginfamily": "General",
+              "pluginid": "45590"
+            }
+          }
+        },
+        "39520": {
+          "outputs": [
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "22 / tcp / ssh": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "\nGive Nessus credentials to perform local checks.\n"
+            }
+          ],
+          "info": {
+            "plugindescription": {
+              "severity": 0,
+              "pluginname": "Backported Security Patch Detection (SSH)",
+              "pluginattributes": {
+                "script_copyright": "This script is Copyright (C) 2009-2015 Tenable Network Security, Inc.",
+                "synopsis": "Security patches are backported.",
+                "description": "Security patches may have been 'backported' to the remote SSH server without changing its version number. \n\nBanner-based checks have been disabled to avoid false positives. \n\nNote that this test is informational only and does not denote any security problem.",
+                "risk_information": {
+                  "risk_factor": "None"
+                },
+                "plugin_name": "Backported Security Patch Detection (SSH)",
+                "see_also": [
+                  "https://access.redhat.com/security/updates/backporting/?sc_cid=3093"
+                ],
+                "fname": "backported_security_patches_ssh.nasl",
+                "dependency": "ssh_get_info.nasl",
+                "plugin_information": {
+                  "plugin_version": "$Revision: 1.9 $",
+                  "plugin_id": 39520,
+                  "plugin_type": "remote",
+                  "plugin_publication_date": "2009/06/25",
+                  "plugin_family": "General",
+                  "plugin_modification_date": "2015/07/07"
+                },
+                "solution": null
+              },
+              "pluginfamily": "General",
+              "pluginid": "39520"
+            }
+          }
+        },
+        "62349": {
+          "outputs": [
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "5672 / tcp / ": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "\nAn AMQP server with the following characteristics was found :\n\n  Protocol : SASL (3)\n  Version  : 1.0.0\n"
+            }
+          ],
+          "info": {
+            "plugindescription": {
+              "severity": 0,
+              "pluginname": "Advanced Message Queuing Protocol Detection",
+              "pluginattributes": {
+                "script_copyright": "This script is Copyright (C) 2012-2022 and is owned by Tenable, Inc. or an Affiliate thereof.",
+                "synopsis": "A messaging service is listening on the remote host.",
+                "description": "The remote host is running an AMQP server, which provides messaging and queuing services for other applications.",
+                "risk_information": {
+                  "risk_factor": "None"
+                },
+                "plugin_name": "Advanced Message Queuing Protocol Detection",
+                "see_also": [
+                  "http://www.amqp.org/",
+                  "http://www.rabbitmq.com/resources/specs/amqp0-9-1.pdf",
+                  "http://www.nessus.org/u?388dd79c"
+                ],
+                "fname": "amqp_detect.nasl",
+                "plugin_information": {
+                  "plugin_version": "1.5",
+                  "plugin_id": 62349,
+                  "plugin_type": "remote",
+                  "plugin_publication_date": "2012/09/27",
+                  "plugin_family": "Service detection",
+                  "plugin_modification_date": "2022/04/11"
+                },
+                "dependency": "find_service1.nasl",
+                "required_port": "5672",
+                "thorough_tests": "true",
+                "solution": null,
+                "vuln_information": {
+                  "cpe": "cpe:/a:spring-amqp_project:spring-amqp",
+                  "asset_inventory": "True"
+                }
+              },
+              "pluginfamily": "Service detection",
+              "pluginid": "62349"
+            }
+          }
+        },
+        "24260": {
+          "outputs": [
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "80 / tcp / www": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "\nResponse Code : HTTP/1.1 401 Unauthorized\r\n\nProtocol version : HTTP/1.1\nHTTP/2 TLS Support: No\nHTTP/2 Cleartext Support: No\nSSL : no\nKeep-Alive : no\nOptions allowed : (Not implemented)\nHeaders :\n\n  Server: nginx/1.18.0 (Ubuntu)\n  Date: Thu, 29 May 2025 20:24:15 GMT\n  Content-Type: text/html;charset=utf-8\n  Content-Length: 447\n  Connection: keep-alive\n  WWW-Authenticate: basic realm=\"ActiveMQRealm\"\n  Cache-Control: must-revalidate,no-cache,no-store\n  \nResponse Body :\n\n<html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"/>\n<title>Error 401 Unauthorized</title>\n</head>\n<body><h2>HTTP ERROR 401 Unauthorized</h2>\n<table>\n<tr><th>URI:</th><td>/</td></tr>\n<tr><th>STATUS:</th><td>401</td></tr>\n<tr><th>MESSAGE:</th><td>Unauthorized</td></tr>\n<tr><th>SERVLET:</th><td>-</td></tr>\n</table>\n<hr><a href=\"https://eclipse.org/jetty\">Powered by Jetty:// 9.4.39.v20210325</a><hr/>\n\n</body>\n</html>\n"
+            },
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "8161 / tcp / www": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "\nResponse Code : HTTP/1.1 401 Unauthorized\r\n\nProtocol version : HTTP/1.1\nHTTP/2 TLS Support: No\nHTTP/2 Cleartext Support: No\nSSL : no\nKeep-Alive : no\nOptions allowed : (Not implemented)\nHeaders :\n\n  Connection: close\n  WWW-Authenticate: basic realm=\"ActiveMQRealm\"\n  Cache-Control: must-revalidate,no-cache,no-store\n  Content-Type: text/html;charset=utf-8\n  Content-Length: 447\n  Server: Jetty(9.4.39.v20210325)\n  \nResponse Body :\n\n<html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"/>\n<title>Error 401 Unauthorized</title>\n</head>\n<body><h2>HTTP ERROR 401 Unauthorized</h2>\n<table>\n<tr><th>URI:</th><td>/</td></tr>\n<tr><th>STATUS:</th><td>401</td></tr>\n<tr><th>MESSAGE:</th><td>Unauthorized</td></tr>\n<tr><th>SERVLET:</th><td>-</td></tr>\n</table>\n<hr><a href=\"https://eclipse.org/jetty\">Powered by Jetty:// 9.4.39.v20210325</a><hr/>\n\n</body>\n</html>\n"
+            }
+          ],
+          "info": {
+            "plugindescription": {
+              "severity": 0,
+              "pluginname": "HyperText Transfer Protocol (HTTP) Information",
+              "pluginattributes": {
+                "script_copyright": "This script is Copyright (C) 2007-2024 and is owned by Tenable, Inc. or an Affiliate thereof.",
+                "synopsis": "Some information about the remote HTTP configuration can be extracted.",
+                "description": "This test gives some information about the remote HTTP protocol - the version used, whether HTTP Keep-Alive is enabled, etc... \n\nThis test is informational only and does not denote any security problem.",
+                "risk_information": {
+                  "risk_factor": "None"
+                },
+                "plugin_name": "HyperText Transfer Protocol (HTTP) Information",
+                "fname": "http_info.nasl",
+                "dependency": "dotnet_framework_handlers.nasl",
+                "required_port": "80",
+                "plugin_information": {
+                  "plugin_version": "1.15",
+                  "plugin_id": 24260,
+                  "plugin_type": "remote",
+                  "plugin_publication_date": "2007/01/30",
+                  "plugin_family": "Web Servers",
+                  "plugin_modification_date": "2024/02/26"
+                },
+                "solution": null,
+                "vuln_information": {
+                  "asset_inventory": "True"
+                }
+              },
+              "pluginfamily": "Web Servers",
+              "pluginid": "24260"
+            }
+          }
+        },
+        "10107": {
+          "outputs": [
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "80 / tcp / www": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "The remote web server type is :\n\nnginx/1.18.0 (Ubuntu)"
+            },
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "8161 / tcp / www": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "The remote web server type is :\n\nJetty(9.4.39.v20210325)"
+            }
+          ],
+          "info": {
+            "plugindescription": {
+              "severity": 0,
+              "pluginname": "HTTP Server Type and Version",
+              "pluginattributes": {
+                "script_copyright": "This script is Copyright (C) 2000-2020 and is owned by Tenable, Inc. or an Affiliate thereof.",
+                "synopsis": "A web server is running on the remote host.",
+                "description": "This plugin attempts to determine the type and the version of the   remote web server.",
+                "risk_information": {
+                  "risk_factor": "None"
+                },
+                "iavt": "0001-T-0931",
+                "ref_information": {
+                  "ref": [
+                    {
+                      "name": "iavt",
+                      "values": {
+                        "value": [
+                          "0001-T-0931"
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "plugin_name": "HTTP Server Type and Version",
+                "fname": "http_version.nasl",
+                "plugin_information": {
+                  "plugin_version": "1.141",
+                  "plugin_id": 10107,
+                  "plugin_type": "remote",
+                  "plugin_publication_date": "2000/01/04",
+                  "plugin_family": "Web Servers",
+                  "plugin_modification_date": "2020/10/30"
+                },
+                "dependency": "restricted_web_pages.nasl",
+                "required_port": "80",
+                "solution": null,
+                "vuln_information": {
+                  "asset_inventory": "True"
+                }
+              },
+              "pluginfamily": "Web Servers",
+              "pluginid": "10107"
+            }
+          }
+        },
+        "22964": {
+          "outputs": [
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "22 / tcp / ssh": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "An SSH server is running on this port."
+            },
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "80 / tcp / www": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ],
+                "8161 / tcp / www": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "A web server is running on this port."
+            }
+          ],
+          "info": {
+            "plugindescription": {
+              "severity": 0,
+              "pluginname": "Service Detection",
+              "pluginattributes": {
+                "script_copyright": "This script is Copyright (C) 2004-2024 and is owned by Tenable, Inc. or an Affiliate thereof.",
+                "synopsis": "The remote service could be identified.",
+                "description": "Nessus was able to identify the remote service by its banner or by looking at the error message it sends when it receives an HTTP request.",
+                "risk_information": {
+                  "risk_factor": "None"
+                },
+                "plugin_name": "Service Detection",
+                "fname": "find_service.nasl",
+                "dependency": "dont_scan_ot.nasl",
+                "plugin_information": {
+                  "plugin_version": "1.194",
+                  "plugin_id": 22964,
+                  "plugin_type": "remote",
+                  "plugin_publication_date": "2007/08/19",
+                  "plugin_family": "Service detection",
+                  "plugin_modification_date": "2024/03/26"
+                },
+                "solution": null
+              },
+              "pluginfamily": "Service detection",
+              "pluginid": "22964"
+            }
+          }
+        },
+        "11219": {
+          "outputs": [
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "22 / tcp / ssh": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "Port 22/tcp was found to be open"
+            },
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "80 / tcp / www": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "Port 80/tcp was found to be open"
+            },
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "1883 / tcp / ": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "Port 1883/tcp was found to be open"
+            },
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "8161 / tcp / www": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 0,
+              "plugin_output": "Port 8161/tcp was found to be open"
+            }
+          ],
+          "info": {
+            "plugindescription": {
+              "severity": 0,
+              "pluginname": "Nessus SYN scanner",
+              "pluginattributes": {
+                "script_copyright": "This script is Copyright (C) 2008-2024 and is owned by Tenable, Inc. or an Affiliate thereof.",
+                "synopsis": "It is possible to determine which TCP ports are open.",
+                "description": "This plugin is a SYN 'half-open' port scanner.  It shall be reasonably quick even against a firewalled target. \n\nNote that SYN scans are less intrusive than TCP (full connect) scans against broken services, but they might cause problems for less robust firewalls and also leave unclosed connections on the remote target, if the network is loaded.",
+                "risk_information": {
+                  "risk_factor": "None"
+                },
+                "plugin_name": "Nessus SYN scanner",
+                "fname": "nessus_syn_scanner.nbin",
+                "dependency": "portscanners_settings.nasl",
+                "plugin_information": {
+                  "plugin_version": "1.61",
+                  "plugin_id": 11219,
+                  "plugin_type": "remote",
+                  "plugin_publication_date": "2009/02/04",
+                  "plugin_family": "Port scanners",
+                  "plugin_modification_date": "2024/12/30"
+                },
+                "solution": "Protect your target with an IP filter."
+              },
+              "pluginfamily": "Port scanners",
+              "pluginid": "11219"
+            }
+          }
+        },
+        "10114": {
+          "outputs": [
+            {
+              "max_attachments_exceeded": true,
+              "ports": {
+                "0 / icmp / ": [
+                  {
+                    "hostname": "10.129.44.65"
+                  }
+                ]
+              },
+              "has_attachment": null,
+              "hosts": null,
+              "severity": 1,
+              "plugin_output": "The remote clock is synchronized with the local clock.\n"
+            }
+          ],
+          "info": {
+            "plugindescription": {
+              "severity": 1,
+              "pluginname": "ICMP Timestamp Request Remote Date Disclosure",
+              "pluginattributes": {
+                "script_copyright": "This script is Copyright (C) 1999-2024 Tenable Network Security, Inc.",
+                "synopsis": "It is possible to determine the exact time set on the remote host.",
+                "description": "The remote host answers to an ICMP timestamp request.  This allows an attacker to know the date that is set on the targeted machine, which may assist an unauthenticated, remote attacker in defeating time-based authentication protocols.\n\nTimestamps returned from machines running Windows Vista / 7 / 2008 / 2008 R2 are deliberately incorrect, but usually within 1000 seconds of the actual system time.",
+                "risk_information": {
+                  "risk_factor": "Low",
+                  "cvss_vector": "CVSS2#AV:L/AC:L/Au:N/C:P/I:N/A:N",
+                  "cvss_base_score": "2.1"
+                },
+                "ref_information": {
+                  "ref": [
+                    {
+                      "name": "cwe",
+                      "values": {
+                        "value": [
+                          "200"
+                        ]
+                      },
+                      "url": "http://cwe.mitre.org/data/definitions/"
+                    },
+                    {
+                      "name": "cve",
+                      "values": {
+                        "value": [
+                          "CVE-1999-0524"
+                        ]
+                      },
+                      "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId="
+                    }
+                  ]
+                },
+                "plugin_name": "ICMP Timestamp Request Remote Date Disclosure",
+                "cvss_score_source": "CVE-1999-0524",
+                "fname": "icmp_timestamp.nasl",
+                "plugin_information": {
+                  "plugin_version": "1.56",
+                  "plugin_id": 10114,
+                  "plugin_type": "remote",
+                  "plugin_publication_date": "1999/08/01",
+                  "plugin_family": "General",
+                  "plugin_modification_date": "2024/10/07"
+                },
+                "cwe": "200",
+                "solution": "Filter out the ICMP timestamp requests (13), and the outgoing ICMP timestamp replies (14).",
+                "vuln_information": {
+                  "vuln_publication_date": "1997/08/01"
+                }
+              },
+              "pluginfamily": "General",
+              "pluginid": "10114"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "raw_scan_data": {
+    "info": {
+      "name": "RawScan_10.129.44.65_1748550190",
+      "scan_type": "local",
+      "no_target": false,
+      "hasaudittrail": true,
+      "severity_processed": "202502210012",
+      "alt_targets_used": false,
+      "migrated": 0,
+      "targets": "10.129.44.65",
+      "scanner_end": 1748550407,
+      "scanner_start": 1748550190,
+      "severity_base_selections": [
+        {
+          "display": "CVSS v2.0",
+          "value": "cvss_v2"
+        },
+        {
+          "display": "CVSS v3.0",
+          "value": "cvss_v3"
+        },
+        {
+          "display": "CVSS v4.0",
+          "value": "cvss_v4"
+        },
+        {
+          "display": "Default (CVSS v3.0)",
+          "value": "system_default"
+        }
+      ],
+      "haskb": true,
+      "offline": false,
+      "node_name": null,
+      "scan_start_timestamp": "1748550190",
+      "control": true,
+      "policy_template_uuid": "731a8e52-3ea6-a291-ec0a-d2ff0619c19d7bd788d6be818b65",
+      "uuid": "fc2b2b89-0a55-a187-7539-69059dfc315148de05a078fb0f51",
+      "node_host": null,
+      "current_severity_base_display": "CVSS v3.0",
+      "timestamp": 1748550411,
+      "policy": "Basic Network Scan",
+      "hostcount": 1,
+      "folder_id": 3,
+      "current_severity_base": "cvss_v3",
+      "license_info": {
+        "trimmed": null,
+        "limit": 2147483647
+      },
+      "status": "completed",
+      "scan_start": 1748550190,
+      "pci-can-upload": false,
+      "scan_end": 1748550411,
+      "isWas": null,
+      "object_id": 109,
+      "node_id": null,
+      "edit_allowed": true,
+      "acls": [
+        {
+          "permissions": 0,
+          "owner": null,
+          "display_name": null,
+          "name": null,
+          "id": null,
+          "type": "default"
+        },
+        {
+          "permissions": 128,
+          "owner": 1,
+          "display_name": "root",
+          "name": "root",
+          "id": 1,
+          "type": "user"
+        }
+      ],
+      "scanner_name": "Local Scanner",
+      "user_permissions": 128,
+      "selected_severity_base": "system_default",
+      "scan_end_timestamp": "1748550407",
+      "scan_group": null
+    },
+    "compliance": [],
+    "filters": [
+      {
+        "operators": [
+          "eq",
+          "neq"
+        ],
+        "control": {
+          "prefix": "filter",
+          "type": "dropdown",
+          "list": [
+            "true",
+            "false"
+          ]
+        },
+        "name": "asset_inventory",
+        "readable_name": "Asset Inventory"
+      },
+      {
+        "operators": [
+          "eq",
+          "neq",
+          "match",
+          "nmatch"
+        ],
+        "control": {
+          "readable_regex": "TEXT",
+          "prefix": "filter",
+          "type": "entry",
+          "regex": ".*"
+        },
+        "name": "cpe",
+        "readable_name": "CPE"
+      },
+      {
+        "operators": [
+          "eq",
+          "neq",
+          "match",
+          "nmatch"
+        ],
+        "control": {
+          "readable_regex": "CVE-YYYY-ID (ie: CVE-2011-0018)",
+          "prefix": "filter",
+          "type": "entry",
+          "regex": "^(CVE|CAN)-(1999|20[0-9][0-9])-[0-9]{4,}$"
+        },
+        "name": "cve",
+        "readable_name": "CVE"
+      },
+      {
+        "operators": [
+          "lt",
+          "gt",
+          "eq",
+          "neq",
+          "match",
+          "nmatch"
+        ],
+        "control": {
+          "readable_regex": "7.5",
+          "prefix": "filter",
+          "type": "entry",
+          "regex": "^(10(\\.0)?|[0-9](\\.[0-9])?)$"
+        },
+        "name": "cvss_base_score",
+        "readable_name": "CVSS v2.0 Base Score"
+      },
+      {
+        "operators": [
+          "eq",
+          "neq",
+          "match",
+          "nmatch"
+        ],
+        "control": {
+          "readable_regex": "TEXT",
+          "prefix": "filter",
+          "type": "entry",
+          "regex": ".*"
+        },
+        "name": "cvss_vector",
+        "readable_name": "CVSS v2.0 Vector"
+      },
+      {
+        "operators": [
+          "eq",
+          "neq",
+          "match",
+          "nmatch"
+        ],
+        "control": {
+          "readable_regex": "CWE reference (ie: 200)",
+          "prefix": "filter",
+          "type": "entry",
+          "regex": "^([0-9]+)$"
+        },
+        "name": "cwe",
+        "readable_name": "CWE"
+      },
+      {
+        "operators": [
+          "lt",
+          "gt",
+          "eq",
+          "neq",
+          "match",
+          "nmatch"
+        ],
+        "control": {
+          "readable_regex": "0.0014",
+          "prefix": "filter",
+          "type": "entry",
+          "regex": "^(0+\\.?|0*\\.\\d+|0*1(\\.0*)?)$"
+        },
+        "name": "epss_score",
+        "readable_name": "EPSS Score"
+      },
+      {
+        "operators": [
+          "eq",
+          "neq",
+          "match",
+          "nmatch"
+        ],
+        "control": {
+          "readable_regex": "TEXT",
+          "prefix": "filter",
+          "type": "entry",
+          "regex": ".*"
+        },
+        "name": "hostname",
+        "readable_name": "Hostname"
+      },
+      {
+        "operators": [
+          "eq",
+          "neq",
+          "match",
+          "nmatch"
+        ],
+        "control": {
+          "readable_regex": "IAVB reference (ie: 2011-B-0151)",
+          "prefix": "filter",
+          "type": "entry",
+          "regex": "^[0-9]+-[A-Za-z]-[0-9]+$"
+        },
+        "name": "iavb",
+        "readable_name": "IAVB ID"
+      },
+      {
+        "operators": [
+          "eq",
+          "neq",
+          "match",
+          "nmatch"
+        ],
+        "control": {
+          "readable_regex": "IAVT reference (ie: 2011-A-0151)",
+          "prefix": "filter",
+          "type": "entry",
+          "regex": "^[0-9]+-[A-Za-z]-[0-9]+$"
+        },
+        "name": "iavt",
+        "readable_name": "IAVT ID"
+      },
+      {
+        "operators": [
+          "match",
+          "nmatch"
+        ],
+        "control": {
+          "readable_regex": "TEXT",
+          "prefix": "filter",
+          "type": "entry",
+          "regex": ".*"
+        },
+        "name": "description",
+        "readable_name": "Plugin Description"
+      },
+      {
+        "operators": [
+          "eq",
+          "neq"
+        ],
+        "control": {
+          "prefix": "filter",
+          "type": "dropdown",
+          "list": []
+        },
+        "name": "plugin_family",
+        "readable_name": "Plugin Family"
+      },
+      {
+        "operators": [
+          "eq",
+          "neq",
+          "match",
+          "nmatch"
+        ],
+        "control": {
+          "readable_regex": "NUMBER",
+          "prefix": "filter",
+          "type": "entry",
+          "regex": "^[0-9, ]+$"
+        },
+        "name": "plugin_id",
+        "readable_name": "Plugin ID"
+      },
+      {
+        "operators": [
+          "date-lt",
+          "date-gt",
+          "date-eq",
+          "date-neq",
+          "match",
+          "nmatch"
+        ],
+        "control": {
+          "readable_regex": "YYYY-MM-DD",
+          "prefix": "filter",
+          "type": "datefield",
+          "regex": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "name": "plugin_modification_date",
+        "readable_name": "Plugin Modification Date"
+      },
+      {
+        "operators": [
+          "eq",
+          "neq",
+          "match",
+          "nmatch"
+        ],
+        "control": {
+          "readable_regex": "TEXT",
+          "prefix": "filter",
+          "type": "entry",
+          "regex": ".*"
+        },
+        "name": "plugin_name",
+        "readable_name": "Plugin Name"
+      },
+      {
+        "operators": [
+          "eq",
+          "neq",
+          "match",
+          "nmatch"
+        ],
+        "control": {
+          "readable_regex": "TEXT",
+          "prefix": "filter",
+          "type": "entry",
+          "regex": ".*"
+        },
+        "name": "plugin_output",
+        "readable_name": "Plugin Output"
+      },
+      {
+        "operators": [
+          "date-lt",
+          "date-gt",
+          "date-eq",
+          "date-neq",
+          "match",
+          "nmatch"
+        ],
+        "control": {
+          "readable_regex": "YYYY-MM-DD",
+          "prefix": "filter",
+          "type": "datefield",
+          "regex": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "name": "plugin_publication_date",
+        "readable_name": "Plugin Publication Date"
+      },
+      {
+        "operators": [
+          "eq",
+          "neq"
+        ],
+        "control": {
+          "prefix": "filter",
+          "type": "dropdown",
+          "list": [
+            "local",
+            "remote"
+          ]
+        },
+        "name": "plugin_type",
+        "readable_name": "Plugin Type"
+      },
+      {
+        "operators": [
+          "eq",
+          "neq",
+          "match",
+          "nmatch"
+        ],
+        "control": {
+          "readable_regex": "80",
+          "prefix": "filter",
+          "type": "entry",
+          "regex": "^[0-9]+$"
+        },
+        "name": "port",
+        "readable_name": "Port"
+      },
+      {
+        "operators": [
+          "eq",
+          "neq"
+        ],
+        "control": {
+          "prefix": "filter",
+          "type": "dropdown",
+          "list": [
+            "tcp",
+            "udp",
+            "icmp"
+          ]
+        },
+        "name": "protocol",
+        "readable_name": "Protocol"
+      },
+      {
+        "operators": [
+          "eq",
+          "neq"
+        ],
+        "control": {
+          "prefix": "filter",
+          "type": "dropdown",
+          "list": [
+            "None",
+            "Low",
+            "Medium",
+            "High",
+            "Critical"
+          ]
+        },
+        "name": "risk_factor",
+        "readable_name": "Risk Factor"
+      },
+      {
+        "operators": [
+          "eq",
+          "neq",
+          "match",
+          "nmatch"
+        ],
+        "control": {
+          "readable_regex": "TEXT",
+          "prefix": "filter",
+          "type": "entry",
+          "regex": ".*"
+        },
+        "name": "see_also",
+        "readable_name": "See Also"
+      },
+      {
+        "operators": [
+          "match",
+          "nmatch"
+        ],
+        "control": {
+          "readable_regex": "TEXT",
+          "prefix": "filter",
+          "type": "entry",
+          "regex": ".*"
+        },
+        "name": "solution",
+        "readable_name": "Solution"
+      },
+      {
+        "operators": [
+          "match",
+          "nmatch"
+        ],
+        "control": {
+          "readable_regex": "TEXT",
+          "prefix": "filter",
+          "type": "entry",
+          "regex": ".*"
+        },
+        "name": "synopsis",
+        "readable_name": "Synopsis"
+      },
+      {
+        "operators": [
+          "lt",
+          "gt",
+          "eq",
+          "neq",
+          "match",
+          "nmatch"
+        ],
+        "control": {
+          "readable_regex": "7.5",
+          "prefix": "filter",
+          "type": "entry",
+          "regex": "^(10(\\.0)?|[0-9](\\.[0-9])?|0(\\.0)?)$"
+        },
+        "name": "vpr_score",
+        "readable_name": "VPR Score"
+      },
+      {
+        "operators": [
+          "date-lt",
+          "date-gt",
+          "date-eq",
+          "date-neq",
+          "match",
+          "nmatch"
+        ],
+        "control": {
+          "readable_regex": "YYYY-MM-DD",
+          "prefix": "filter",
+          "type": "datefield",
+          "regex": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "name": "vuln_publication_date",
+        "readable_name": "Vulnerability Publication Date"
+      }
+    ],
+    "comphosts": [],
+    "saved_filters": [],
+    "history": [
+      {
+        "alt_targets_used": false,
+        "scheduler": 0,
+        "node_name": null,
+        "node_host": null,
+        "scan_group": null,
+        "node_id": null,
+        "schedule_type": "manual",
+        "status": "completed",
+        "type": "local",
+        "uuid": "fc2b2b89-0a55-a187-7539-69059dfc315148de05a078fb0f51",
+        "last_modification_date": 1748550411,
+        "creation_date": 1748550190,
+        "owner_id": 1,
+        "history_id": 110
+      }
+    ],
+    "notes": {
+      "note": [
+        {
+          "severity": 1,
+          "message": "\nERROR: Your plugins have not been updated since 2025/2/21\nPerforming a scan with an older plugin set will yield out-of-date results and\nproduce an incomplete audit. Please run nessus-update-plugins to get the\nnewest vulnerability checks from Nessus.org.\n\n",
+          "title": "Outdated plugins"
+        }
+      ],
+      "type": "errors"
+    },
+    "hosts": [
+      {
+        "totalchecksconsidered": 193997,
+        "numchecksconsidered": 193997,
+        "scanprogresstotal": 100,
+        "scanprogresscurrent": 100,
+        "host_index": 0,
+        "score": 38,
+        "severitycount": {
+          "item": [
+            {
+              "count": 28,
+              "severitylevel": 0
+            },
+            {
+              "count": 1,
+              "severitylevel": 1
+            },
+            {
+              "count": 0,
+              "severitylevel": 2
+            },
+            {
+              "count": 0,
+              "severitylevel": 3
+            },
+            {
+              "count": 0,
+              "severitylevel": 4
+            },
+            {
+              "count": 0,
+              "severitylevel": 5
+            },
+            {
+              "count": 0,
+              "severitylevel": 6
+            },
+            {
+              "count": 0,
+              "severitylevel": 7
+            },
+            {
+              "count": 0,
+              "severitylevel": 8
+            },
+            {
+              "count": 0,
+              "severitylevel": 9
+            }
+          ]
+        },
+        "progress": "100-100/193997-193997",
+        "offline_critical": 0,
+        "offline_high": 0,
+        "offline_medium": 0,
+        "offline_low": 0,
+        "offline_info": 0,
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 1,
+        "info": 28,
+        "severity": 29,
+        "host_id": 2,
+        "hostname": "10.129.44.65"
+      }
+    ],
+    "remediations": {
+      "remediations": null,
+      "num_hosts": 1,
+      "num_cves": 1,
+      "num_impacted_hosts": 0,
+      "num_remediated_cves": 0
+    },
+    "prioritization": {
+      "plugins": [],
+      "threat_level": 0
+    },
+    "vulnerabilities": [
+      {
+        "count": 1,
+        "score": null,
+        "vuln_index": 43,
+        "plugin_name": "Traceroute Information",
+        "severity": 0,
+        "vpr_score": null,
+        "plugin_id": 10287,
+        "severity_index": 0,
+        "cpe": null,
+        "offline": false,
+        "plugin_family": "General",
+        "snoozed": 0,
+        "epss_score": null
+      },
+      {
+        "count": 1,
+        "score": null,
+        "vuln_index": 42,
+        "plugin_name": "TCP/IP Timestamps Supported",
+        "severity": 0,
+        "vpr_score": null,
+        "plugin_id": 25220,
+        "severity_index": 1,
+        "cpe": null,
+        "offline": false,
+        "plugin_family": "General",
+        "snoozed": 0,
+        "epss_score": null
+      },
+      {
+        "count": 1,
+        "score": null,
+        "vuln_index": 41,
+        "plugin_name": "Target Credential Status by Authentication Protocol - No Credentials Provided",
+        "severity": 0,
+        "vpr_score": null,
+        "plugin_id": 110723,
+        "severity_index": 2,
+        "cpe": null,
+        "offline": false,
+        "plugin_family": "Settings",
+        "snoozed": 0,
+        "epss_score": null
+      },
+      {
+        "count": 1,
+        "score": null,
+        "vuln_index": 40,
+        "plugin_name": "SSH Server Type and Version Information",
+        "severity": 0,
+        "vpr_score": null,
+        "plugin_id": 10267,
+        "severity_index": 3,
+        "cpe": null,
+        "offline": false,
+        "plugin_family": "Service detection",
+        "snoozed": 0,
+        "epss_score": null
+      },
+      {
+        "count": 1,
+        "score": null,
+        "vuln_index": 39,
+        "plugin_name": "SSH Protocol Versions Supported",
+        "severity": 0,
+        "vpr_score": null,
+        "plugin_id": 10881,
+        "severity_index": 4,
+        "cpe": null,
+        "offline": false,
+        "plugin_family": "General",
+        "snoozed": 0,
+        "epss_score": null
+      },
+      {
+        "count": 1,
+        "score": null,
+        "vuln_index": 38,
+        "plugin_name": "SSH Password Authentication Accepted",
+        "severity": 0,
+        "vpr_score": null,
+        "plugin_id": 149334,
+        "severity_index": 5,
+        "cpe": null,
+        "offline": false,
+        "plugin_family": "Service detection",
+        "snoozed": 0,
+        "epss_score": null
+      },
+      {
+        "count": 1,
+        "score": null,
+        "vuln_index": 36,
+        "plugin_name": "Record Route",
+        "severity": 0,
+        "vpr_score": null,
+        "plugin_id": 12264,
+        "severity_index": 6,
+        "cpe": null,
+        "offline": false,
+        "plugin_family": "General",
+        "snoozed": 0,
+        "epss_score": null
+      },
+      {
+        "count": 1,
+        "score": null,
+        "vuln_index": 35,
+        "plugin_name": "OS Security Patch Assessment Not Available",
+        "severity": 0,
+        "vpr_score": null,
+        "plugin_id": 117886,
+        "severity_index": 7,
+        "cpe": null,
+        "offline": false,
+        "plugin_family": "Settings",
+        "snoozed": 0,
+        "epss_score": null
+      },
+      {
+        "count": 1,
+        "score": null,
+        "vuln_index": 34,
+        "plugin_name": "OS Identification",
+        "severity": 0,
+        "vpr_score": null,
+        "plugin_id": 11936,
+        "severity_index": 8,
+        "cpe": null,
+        "offline": false,
+        "plugin_family": "General",
+        "snoozed": 0,
+        "epss_score": null
+      },
+      {
+        "count": 1,
+        "score": null,
+        "vuln_index": 33,
+        "plugin_name": "OpenSSH Detection",
+        "severity": 0,
+        "vpr_score": null,
+        "plugin_id": 181418,
+        "severity_index": 9,
+        "cpe": "cpe:/a:openbsd:openssh",
+        "offline": false,
+        "plugin_family": "Misc.",
+        "snoozed": 0,
+        "epss_score": null
+      },
+      {
+        "count": 1,
+        "score": null,
+        "vuln_index": 32,
+        "plugin_name": "nginx HTTP Server Detection",
+        "severity": 0,
+        "vpr_score": null,
+        "plugin_id": 106375,
+        "severity_index": 10,
+        "cpe": "cpe:/a:nginx:nginx",
+        "offline": false,
+        "plugin_family": "Web Servers",
+        "snoozed": 0,
+        "epss_score": null
+      },
+      {
+        "count": 1,
+        "score": null,
+        "vuln_index": 30,
+        "plugin_name": "Nessus Scan Information",
+        "severity": 0,
+        "vpr_score": null,
+        "plugin_id": 19506,
+        "severity_index": 11,
+        "cpe": null,
+        "offline": false,
+        "plugin_family": "Settings",
+        "snoozed": 0,
+        "epss_score": null
+      },
+      {
+        "count": 1,
+        "score": null,
+        "vuln_index": 26,
+        "plugin_name": "Eclipse Jetty Web Server Detection",
+        "severity": 0,
+        "vpr_score": null,
+        "plugin_id": 194915,
+        "severity_index": 12,
+        "cpe": "cpe:/a:eclipse:jetty",
+        "offline": false,
+        "plugin_family": "Web Servers",
+        "snoozed": 0,
+        "epss_score": null
+      },
+      {
+        "count": 1,
+        "score": null,
+        "vuln_index": 25,
+        "plugin_name": "Device Type",
+        "severity": 0,
+        "vpr_score": null,
+        "plugin_id": 54615,
+        "severity_index": 13,
+        "cpe": null,
+        "offline": false,
+        "plugin_family": "General",
+        "snoozed": 0,
+        "epss_score": null
+      },
+      {
+        "count": 1,
+        "score": null,
+        "vuln_index": 24,
+        "plugin_name": "Common Platform Enumeration (CPE)",
+        "severity": 0,
+        "vpr_score": null,
+        "plugin_id": 45590,
+        "severity_index": 14,
+        "cpe": null,
+        "offline": false,
+        "plugin_family": "General",
+        "snoozed": 0,
+        "epss_score": null
+      },
+      {
+        "count": 1,
+        "score": null,
+        "vuln_index": 23,
+        "plugin_name": "Backported Security Patch Detection (SSH)",
+        "severity": 0,
+        "vpr_score": null,
+        "plugin_id": 39520,
+        "severity_index": 15,
+        "cpe": null,
+        "offline": false,
+        "plugin_family": "General",
+        "snoozed": 0,
+        "epss_score": null
+      },
+      {
+        "count": 1,
+        "score": null,
+        "vuln_index": 22,
+        "plugin_name": "Advanced Message Queuing Protocol Detection",
+        "severity": 0,
+        "vpr_score": null,
+        "plugin_id": 62349,
+        "severity_index": 16,
+        "cpe": "cpe:/a:spring-amqp_project:spring-amqp",
+        "offline": false,
+        "plugin_family": "Service detection",
+        "snoozed": 0,
+        "epss_score": null
+      },
+      {
+        "count": 2,
+        "score": null,
+        "vuln_index": 28,
+        "plugin_name": "HyperText Transfer Protocol (HTTP) Information",
+        "severity": 0,
+        "vpr_score": null,
+        "plugin_id": 24260,
+        "severity_index": 17,
+        "cpe": null,
+        "offline": false,
+        "plugin_family": "Web Servers",
+        "snoozed": 0,
+        "epss_score": null
+      },
+      {
+        "count": 2,
+        "score": null,
+        "vuln_index": 27,
+        "plugin_name": "HTTP Server Type and Version",
+        "severity": 0,
+        "vpr_score": null,
+        "plugin_id": 10107,
+        "severity_index": 18,
+        "cpe": null,
+        "offline": false,
+        "plugin_family": "Web Servers",
+        "snoozed": 0,
+        "epss_score": null
+      },
+      {
+        "count": 3,
+        "score": null,
+        "vuln_index": 37,
+        "plugin_name": "Service Detection",
+        "severity": 0,
+        "vpr_score": null,
+        "plugin_id": 22964,
+        "severity_index": 19,
+        "cpe": null,
+        "offline": false,
+        "plugin_family": "Service detection",
+        "snoozed": 0,
+        "epss_score": null
+      },
+      {
+        "count": 4,
+        "score": null,
+        "vuln_index": 31,
+        "plugin_name": "Nessus SYN scanner",
+        "severity": 0,
+        "vpr_score": null,
+        "plugin_id": 11219,
+        "severity_index": 20,
+        "cpe": null,
+        "offline": false,
+        "plugin_family": "Port scanners",
+        "snoozed": 0,
+        "epss_score": null
+      },
+      {
+        "isFallBackScore": true,
+        "count": 1,
+        "score": "2.1",
+        "vuln_index": 29,
+        "plugin_name": "ICMP Timestamp Request Remote Date Disclosure",
+        "severity": 1,
+        "vpr_score": null,
+        "plugin_id": 10114,
+        "severity_index": 21,
+        "cpe": null,
+        "offline": false,
+        "plugin_family": "General",
+        "snoozed": 0,
+        "epss_score": null,
+        "fallBackScoreTip": "CVSS v2.0 score"
+      }
+    ]
+  },
+  "collection_timestamp": "2025-05-29T15:27:10.898703",
+  "scan_id": "109"
+}

@@ -1,17 +1,17 @@
 [
   {
-    "host": "10.129.175.161",
+    "host": "10.129.95.234",
     "host_id": 2,
-    "plugin_id": 97833,
-    "plugin_name": "MS17-010: Security Update for Microsoft Windows SMB Server (4013389) (ETERNALBLUE) (ETERNALCHAMPION) (ETERNALROMANCE) (ETERNALSYNERGY) (WannaCry) (EternalRocks) (Petya) (uncredentialed check)",
-    "severity": 3,
-    "severity_name": "HIGH",
+    "plugin_id": 99523,
+    "plugin_name": "Microsoft Windows Server 2003 IIS 6.0 WebDAV PROPFIND Request Handling RCE (EXPLODINGCAN)",
+    "severity": 4,
+    "severity_name": "CRITICAL",
     "exploit_frameworks": [
       {
         "name": "Metasploit",
         "exploits": [
           {
-            "name": "SMB DOUBLEPULSAR Remote Code Execution",
+            "name": "Microsoft IIS WebDav ScStoragePathFromUrl Overflow",
             "url": null
           }
         ]
@@ -37,16 +37,16 @@
     ],
     "cve_ids": [],
     "cpe": [
-      "cpe:/o:microsoft:windows"
+      "cpe:/o:microsoft:windows\ncpe:/a:microsoft:iis"
     ],
-    "patch_date": "2017/03/14",
-    "vuln_pub_date": "2017/03/14",
+    "patch_date": "",
+    "vuln_pub_date": "2017/03/26",
     "description": "",
     "solution": "",
-    "risk_factor": "High",
-    "cvss_v2_score": "9.3",
+    "risk_factor": "Critical",
+    "cvss_v2_score": "10.0",
     "cvss_v3_score": "",
-    "cvss_v2_vector": "CVSS2#AV:N/AC:M/Au:N/C:C/I:C/A:C",
+    "cvss_v2_vector": "CVSS2#AV:N/AC:L/Au:N/C:C/I:C/A:C",
     "cvss_v3_vector": "",
     "exploit_available": true,
     "exploit_ease": "Exploits are available",

