@@ -355,13 +355,14 @@ class NessusScanner:
         print(f"[+] Complete scan data collection finished")
         return complete_data
     
-    def save_raw_data(self, scan_data: Dict, target: str, output_dir: str = "nessus_raw_data") -> str:
+    def save_raw_data(self, scan_data: Dict, target: str, boxname: str = None, output_dir: str = "nessus_raw_data") -> str:
         """
         Save raw scan data to files.
         
         Args:
             scan_data: Complete scan data
             target: Target identifier for filename
+            boxname: Box name for filename (optional)
             output_dir: Output directory
             
         Returns:
@@ -373,7 +374,13 @@ class NessusScanner:
             
             # Generate filename with timestamp
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            filename = f"nessus_raw_{target.replace('.', '_')}_{timestamp}.json"
+            
+            # Use boxname if provided, otherwise default to "nessus_raw"
+            if boxname:
+                filename = f"{boxname}_{target.replace('.', '_')}_{timestamp}.json"
+            else:
+                filename = f"nessus_raw_{target.replace('.', '_')}_{timestamp}.json"
+            
             filepath = os.path.join(output_dir, filename)
             
             # Save data
@@ -387,13 +394,14 @@ class NessusScanner:
             print(f"[!] Error saving raw data: {e}")
             return ""
     
-    def perform_complete_scan(self, target: str, scan_name: str = None, 
+    def perform_complete_scan(self, target: str, boxname: str = None, scan_name: str = None, 
                             template_uuid: str = None, output_dir: str = "nessus_raw_data") -> Optional[str]:
         """
         Perform a complete scan workflow and save all raw data.
         
         Args:
             target: Target IP address or hostname
+            boxname: Box name for filename generation (optional)
             scan_name: Custom scan name
             template_uuid: Scan template UUID
             output_dir: Output directory for raw data
@@ -424,7 +432,7 @@ class NessusScanner:
             return None
         
         # Save raw data
-        filepath = self.save_raw_data(complete_data, target, output_dir)
+        filepath = self.save_raw_data(complete_data, target, boxname, output_dir)
         
         return filepath
     
@@ -445,6 +453,7 @@ def main():
     """Main function for command-line usage."""
     parser = argparse.ArgumentParser(description="Nessus Raw Data Scanner")
     parser.add_argument("target", help="Target IP address or hostname")
+    parser.add_argument("--boxname", help="Box name for filename generation (e.g., htb-granny, vulnhub-kioptrix)")
     parser.add_argument("--server", default="https://localhost:15858", 
                        help="Nessus server URL (default: https://localhost:15858)")
     parser.add_argument("--username", default="root", 
@@ -463,6 +472,8 @@ def main():
     print("Nessus Raw Data Scanner")
     print("=" * 40)
     print(f"Target: {args.target}")
+    if args.boxname:
+        print(f"Box Name: {args.boxname}")
     print(f"Server: {args.server}")
     print(f"Output Directory: {args.output_dir}")
     print("=" * 40)
@@ -479,6 +490,7 @@ def main():
         # Perform complete scan
         output_file = scanner.perform_complete_scan(
             target=args.target,
+            boxname=args.boxname,
             scan_name=args.scan_name,
             template_uuid=args.template,
             output_dir=args.output_dir
@@ -503,7 +515,8 @@ if __name__ == "__main__":
     # Example usage if run directly
     if len(os.sys.argv) == 1:
         # Default configuration for testing
-        TARGET_IP = "10.129.236.156"
+        TARGET_IP = "10.129.252.161"
+        BOXNAME = "legacy"  
         NESSUS_SERVER = "https://localhost:15858"
         USERNAME = "root"
         PASSWORD = "root"
@@ -512,13 +525,14 @@ if __name__ == "__main__":
         print("Nessus Raw Data Scanner")
         print("=" * 40)
         print(f"Target: {TARGET_IP}")
+        print(f"Box Name: {BOXNAME}")
         print(f"Server: {NESSUS_SERVER}")
         print(f"Output Directory: {OUTPUT_DIR}")
         print("=" * 40)
         
         try:
             scanner = NessusScanner(NESSUS_SERVER, USERNAME, PASSWORD)
-            output_file = scanner.perform_complete_scan(TARGET_IP, output_dir=OUTPUT_DIR)
+            output_file = scanner.perform_complete_scan(TARGET_IP, boxname=BOXNAME, output_dir=OUTPUT_DIR)
             
             if output_file:
                 print(f"\n[SUCCESS] Raw scan data saved to: {output_file}")
