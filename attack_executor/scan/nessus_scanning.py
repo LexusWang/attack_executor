@@ -503,7 +503,7 @@ if __name__ == "__main__":
     # Example usage if run directly
     if len(os.sys.argv) == 1:
         # Default configuration for testing
-        TARGET_IP = "10.129.82.54"
+        TARGET_IP = "10.129.236.156"
         NESSUS_SERVER = "https://localhost:15858"
         USERNAME = "root"
         PASSWORD = "root"
