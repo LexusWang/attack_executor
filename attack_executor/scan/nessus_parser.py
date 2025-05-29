@@ -753,7 +753,7 @@ class NessusExploitParser:
     
     def save_results(self, report: str, target_identifier: str, output_dir: str = "nessus_analysis") -> Dict[str, str]:
         """
-        Save analysis results to files.
+        Save analysis results to files organized by host.
         
         Args:
             report: Report content
@@ -764,39 +764,80 @@ class NessusExploitParser:
             Dictionary of saved file paths
         """
         try:
-            # Create output directory
+            # Create main output directory
             os.makedirs(output_dir, exist_ok=True)
             
             # Generate timestamp
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             
-            # Save main report
-            report_filename = f"exploit_frameworks_{target_identifier}_{timestamp}.txt"
-            report_filepath = os.path.join(output_dir, report_filename)
+            # Group vulnerabilities by host
+            hosts_data = {}
+            for vuln in self.exploitable_vulns:
+                host_ip = vuln.get('host', 'unknown')
+                if host_ip not in hosts_data:
+                    hosts_data[host_ip] = []
+                hosts_data[host_ip].append(vuln)
             
-            with open(report_filepath, 'w', encoding='utf-8') as f:
-                f.write(report)
+            saved_files = {}
             
-            # Save Metasploit script
-            msf_filename = f"metasploit_exploits_{target_identifier}_{timestamp}.rc"
-            msf_filepath = os.path.join(output_dir, msf_filename)
+            # Create separate files for each host
+            for host_ip, host_vulns in hosts_data.items():
+                # Extract box name from the raw data filename
+                box_folder_name = self.extract_computer_name(None)
+                host_output_dir = os.path.join(output_dir, box_folder_name)
+                os.makedirs(host_output_dir, exist_ok=True)
+                
+                # Generate host-specific report
+                host_report = self.generate_exploit_framework_report(host_vulns)
+                
+                # Use legacy naming convention: legacy_{ip_with_underscores}_{timestamp}
+                legacy_identifier = f"legacy_{host_ip.replace('.', '_')}_{timestamp}"
+                
+                # Save host-specific files with legacy naming
+                report_filename = f"{legacy_identifier}.txt"
+                report_filepath = os.path.join(host_output_dir, report_filename)
+                
+                with open(report_filepath, 'w', encoding='utf-8') as f:
+                    f.write(host_report)
+                
+                # Save Metasploit script for this host
+                msf_filename = f"{legacy_identifier}.rc"
+                msf_filepath = os.path.join(host_output_dir, msf_filename)
+                
+                msf_script = self.generate_metasploit_resource_script(host_vulns, msf_filepath)
+                
+                # Save exploit framework vulnerabilities as JSON for this host
+                json_filename = f"{legacy_identifier}.json"
+                json_filepath = os.path.join(host_output_dir, json_filename)
+                
+                with open(json_filepath, 'w', encoding='utf-8') as f:
+                    json.dump(host_vulns, f, indent=2, ensure_ascii=False)
+                
+                # Store file paths
+                saved_files[host_ip] = {
+                    'report': report_filepath,
+                    'metasploit': msf_filepath,
+                    'json': json_filepath,
+                    'folder': host_output_dir
+                }
+                
+                print(f"[+] Analysis results for {host_ip} saved to {host_output_dir}/")
             
-            msf_script = self.generate_metasploit_resource_script(self.exploitable_vulns, msf_filepath)
+            # Also save a combined report in the main directory for overview
+            if len(hosts_data) > 1:
+                combined_legacy_identifier = f"legacy_combined_{timestamp}"
+                combined_report_filename = f"{combined_legacy_identifier}.txt"
+                combined_report_filepath = os.path.join(output_dir, combined_report_filename)
+                
+                with open(combined_report_filepath, 'w', encoding='utf-8') as f:
+                    f.write(report)
+                
+                saved_files['combined'] = {
+                    'report': combined_report_filepath
+                }
+                print(f"[+] Combined analysis report saved to {combined_report_filepath}")
             
-            # Save exploit framework vulnerabilities as JSON
-            json_filename = f"exploit_frameworks_{target_identifier}_{timestamp}.json"
-            json_filepath = os.path.join(output_dir, json_filename)
-            
-            with open(json_filepath, 'w', encoding='utf-8') as f:
-                json.dump(self.exploitable_vulns, f, indent=2, ensure_ascii=False)
-            
-            print(f"[+] Analysis results saved to {output_dir}/")
-            
-            return {
-                'report': report_filepath,
-                'metasploit': msf_filepath,
-                'json': json_filepath
-            }
+            return saved_files
             
         except Exception as e:
             print(f"[!] Error saving results: {e}")
@@ -834,6 +875,38 @@ class NessusExploitParser:
             print("\n[SUCCESS] ANALYSIS COMPLETED - No vulnerabilities with exploit frameworks found")
             print("This could indicate that the target is well-patched or the scan didn't find exploitable services.")
             return {}
+
+    def extract_computer_name(self, host_data: Dict) -> str:
+        """
+        Extract the box name from the raw data filename.
+        
+        Args:
+            host_data: Host information from raw scan data (not used in this implementation)
+            
+        Returns:
+            Box name extracted from the raw data filename
+        """
+        try:
+            # Extract box name from the raw data filename
+            # Format: boxname_ip_timestamp.json -> extract "boxname"
+            filename = os.path.basename(self.raw_data_file)
+            
+            # Remove .json extension
+            if filename.endswith('.json'):
+                filename = filename[:-5]
+            
+            # Split by underscore and take the first part as box name
+            parts = filename.split('_')
+            if len(parts) > 0:
+                box_name = parts[0]
+                return box_name
+            
+            # Fallback to 'unknown' if parsing fails
+            return 'unknown'
+            
+        except Exception as e:
+            print(f"[!] Error extracting box name from filename: {e}")
+            return 'unknown'
 
 
 def main():
