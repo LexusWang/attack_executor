@@ -783,31 +783,31 @@ class NessusExploitParser:
             # Create separate files for each host
             for host_ip, host_vulns in hosts_data.items():
                 # Extract box name from the raw data filename
-                box_folder_name = self.extract_computer_name(None)
-                host_output_dir = os.path.join(output_dir, box_folder_name)
+                box_name = self.extract_computer_name(None)
+                host_output_dir = os.path.join(output_dir, box_name)
                 os.makedirs(host_output_dir, exist_ok=True)
                 
                 # Generate host-specific report
                 host_report = self.generate_exploit_framework_report(host_vulns)
                 
-                # Use legacy naming convention: legacy_{ip_with_underscores}_{timestamp}
-                legacy_identifier = f"legacy_{host_ip.replace('.', '_')}_{timestamp}"
+                # Extract box name from filename and use it in file naming
+                file_identifier = f"{box_name}_{host_ip.replace('.', '_')}_{timestamp}"
                 
-                # Save host-specific files with legacy naming
-                report_filename = f"{legacy_identifier}.txt"
+                # Save host-specific files with box name in filename
+                report_filename = f"{file_identifier}.txt"
                 report_filepath = os.path.join(host_output_dir, report_filename)
                 
                 with open(report_filepath, 'w', encoding='utf-8') as f:
                     f.write(host_report)
                 
                 # Save Metasploit script for this host
-                msf_filename = f"{legacy_identifier}.rc"
+                msf_filename = f"{file_identifier}.rc"
                 msf_filepath = os.path.join(host_output_dir, msf_filename)
                 
                 msf_script = self.generate_metasploit_resource_script(host_vulns, msf_filepath)
                 
                 # Save exploit framework vulnerabilities as JSON for this host
-                json_filename = f"{legacy_identifier}.json"
+                json_filename = f"{file_identifier}.json"
                 json_filepath = os.path.join(host_output_dir, json_filename)
                 
                 with open(json_filepath, 'w', encoding='utf-8') as f:
@@ -825,8 +825,8 @@ class NessusExploitParser:
             
             # Also save a combined report in the main directory for overview
             if len(hosts_data) > 1:
-                combined_legacy_identifier = f"legacy_combined_{timestamp}"
-                combined_report_filename = f"{combined_legacy_identifier}.txt"
+                combined_file_identifier = f"combined_{timestamp}"
+                combined_report_filename = f"{combined_file_identifier}.txt"
                 combined_report_filepath = os.path.join(output_dir, combined_report_filename)
                 
                 with open(combined_report_filepath, 'w', encoding='utf-8') as f:
