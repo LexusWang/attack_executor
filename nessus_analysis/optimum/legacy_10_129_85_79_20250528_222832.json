@@ -1,0 +1,39 @@
+[
+  {
+    "host": "10.129.85.79",
+    "host_id": 2,
+    "plugin_id": 206652,
+    "plugin_name": "Rejetto HTTP File Server 2.x <= 2.3m RCE (CVE-2024-23692)",
+    "severity": 4,
+    "severity_name": "CRITICAL",
+    "exploit_frameworks": [
+      {
+        "name": "Metasploit",
+        "exploits": [
+          {
+            "name": "Rejetto HTTP File Server (HFS) Unauthenticated Remote Code Execution",
+            "url": null
+          }
+        ]
+      }
+    ],
+    "cve_ids": [],
+    "cpe": [
+      "cpe:/a:rejetto:http_file_server"
+    ],
+    "patch_date": "",
+    "vuln_pub_date": "2024/05/31",
+    "description": "",
+    "solution": "",
+    "risk_factor": "Critical",
+    "cvss_v2_score": "10.0",
+    "cvss_v3_score": "",
+    "cvss_v2_vector": "CVSS2#AV:N/AC:L/Au:N/C:C/I:C/A:C",
+    "cvss_v3_vector": "",
+    "exploit_available": true,
+    "exploit_ease": "Exploits are available",
+    "in_the_news": false,
+    "unsupported_by_vendor": false,
+    "plugin_output": ""
+  }
+]

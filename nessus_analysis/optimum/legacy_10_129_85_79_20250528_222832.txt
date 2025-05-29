@@ -1,0 +1,48 @@
+================================================================================
+VULNERABILITIES WITH EXPLOIT FRAMEWORKS REPORT
+Sorted by CVSS v3.0 Base Score (Highest First)
+================================================================================
+
+SCAN INFORMATION
+--------------------
+Scan Name: RawScan_10.129.85.79_1748488655
+Target: 10.129.85.79
+Scan Start: 1748488655
+Scan End: 1748489132
+Data Collection: 2025-05-28T22:25:38.411969
+
+SUMMARY
+--------------------
+Total Vulnerabilities with Exploit Frameworks: 1
+CRITICAL: 1
+With CVSS v3.0 Scores: 0
+With CVSS v2.0 Scores: 1
+Total Unique CVEs: 0
+
+EXPLOIT FRAMEWORKS AVAILABLE
+------------------------------
+Metasploit: 1 vulnerabilities
+
+VULNERABILITIES WITH EXPLOIT FRAMEWORKS
+============================================================
+
+[1] CRITICAL - Rejetto HTTP File Server 2.x <= 2.3m RCE (CVE-2024-23692) | CVSS v2.0: 10.0
+Host: 10.129.85.79 | Plugin ID: 206652
+[CVSS v2.0] Score: 10.0
+[CVSS v2.0] Vector: CVSS2#AV:N/AC:L/Au:N/C:C/I:C/A:C
+[CPE] CPE: cpe:/a:rejetto:http_file_server
+[EXPLOIT FRAMEWORKS] Available frameworks:
+  + Metasploit:
+    - Rejetto HTTP File Server (HFS) Unauthenticated Remote Code Execution
+[EXPLOIT] Exploit Ease: Exploits are available
+[RISK] Risk Factor: Critical
+[TIMELINE] Timeline: Vuln Published: 2024/05/31
+------------------------------------------------------------
+
+METASPLOIT EXPLOITATION TARGETS
+========================================
+Target: 10.129.85.79 - Rejetto HTTP File Server 2.x <= 2.3m RCE (CVE-2024-23692) (CVSS: 10.0)
+  Metasploit Exploit: Rejetto HTTP File Server (HFS) Unauthenticated Remote Code Execution
+  # search Rejetto HTTP File
+  # search Rejetto HTTP File
+  # set RHOSTS 10.129.85.79

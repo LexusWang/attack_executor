@@ -515,8 +515,8 @@ if __name__ == "__main__":
     # Example usage if run directly
     if len(os.sys.argv) == 1:
         # Default configuration for testing
-        TARGET_IP = "10.129.252.161"
-        BOXNAME = "legacy"  
+        TARGET_IP = "10.129.175.161"
+        BOXNAME = "blue"  
         NESSUS_SERVER = "https://localhost:15858"
         USERNAME = "root"
         PASSWORD = "root"
