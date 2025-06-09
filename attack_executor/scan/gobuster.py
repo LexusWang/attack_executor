@@ -1,27 +1,39 @@
 import subprocess
 import os
-from langchain_openai import ChatOpenAI
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
+# from langchain_openai import ChatOpenAI
+# from langchain_core.prompts import ChatPromptTemplate
+# from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 
 class GobusterExecutor:
     def __init__(self):
         self.last_result = None
         self.target = None
-        api_key = os.getenv("OPENAI_API_KEY")
-        if api_key is None:
-            raise ValueError("The OPENAI_API_KEY environment variable is not set")
-        self.llm = ChatOpenAI(
-            model_name="gpt-4o",
-            temperature=0.0,
-            openai_api_key=api_key
-        )
+        # api_key = os.getenv("OPENAI_API_KEY")
+        # if api_key is None:
+        #     raise ValueError("The OPENAI_API_KEY environment variable is not set")
+        # self.llm = ChatOpenAI(
+        #     model_name="gpt-4o",
+        #     temperature=0.0,
+        #     openai_api_key=api_key
+        # )
 
     def start_session(self, target):
         self.target = target
         
-    def enumerate_dir(self, target_url, wordlist):
+    def enumerate_dir(self, target_url, wordlist, extensions=None, threads=10):
         command = ["gobuster", "dir", "-u", target_url, "-w", wordlist]
+        
+        # Add extensions if provided
+        if extensions:
+            if isinstance(extensions, list):
+                extensions_str = ",".join(extensions)
+            else:
+                extensions_str = extensions
+            command.extend(["-x", extensions_str])
+            
+        # Add threads parameter
+        command.extend(["-t", str(threads)])
+            
         try:
             process = subprocess.run(
                 command,
@@ -41,8 +53,8 @@ class GobusterExecutor:
                 print("Error:", e.stderr)
             return None
         
-    def enumerate_subdomain(self, main_domain, wordlist):
-        command = ["gobuster", "dns", "-d", main_domain, "-w", wordlist]
+    def enumerate_subdomain(self, main_domain, wordlist, threads=10):
+        command = ["gobuster", "dns", "-d", main_domain, "-w", wordlist, "-t", str(threads)]
         try:
             process = subprocess.run(
                 command,
@@ -62,12 +74,12 @@ class GobusterExecutor:
                 print("Error:", e.stderr)
             return None
 
-    def fuzz_directory(self, wordlist="smalllist.txt", endchar="/"):
+    def fuzz_directory(self, wordlist="smalllist.txt", endchar="/", threads=10):
         if not self.target:
             print("Session not started.")
             return None
         self.target = self.target + "FUZZ" + endchar 
-        command = ["gobuster", "fuzz", "-u", self.target, "-w", wordlist, "-b", "404"]
+        command = ["gobuster", "fuzz", "-u", self.target, "-w", wordlist, "-b", "404", "-t", str(threads)]
 
         try:
             process = subprocess.run(

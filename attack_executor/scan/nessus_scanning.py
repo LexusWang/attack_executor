@@ -515,13 +515,12 @@ if __name__ == "__main__":
     # Example usage if run directly
     if len(os.sys.argv) == 1:
         # Default configuration for testing
-        TARGET_IP = "10.129.95.234"
-        BOXNAME = "granny"  
+        TARGET_IP = "10.129.9.160"
+        BOXNAME = "shocker"  
         NESSUS_SERVER = "https://localhost:15858"
         USERNAME = "root"
         PASSWORD = "root"
         OUTPUT_DIR = "nessus_raw_data"
-        
         print("Nessus Raw Data Scanner")
         print("=" * 40)
         print(f"Target: {TARGET_IP}")
