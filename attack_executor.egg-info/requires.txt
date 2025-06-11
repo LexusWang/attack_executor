@@ -1,2 +1,0 @@
-sliver-py>=0.0.19
-pymetasploit3>=1.0.6

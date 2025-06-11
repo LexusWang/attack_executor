@@ -8,14 +8,14 @@ class GobusterExecutor:
     def __init__(self):
         self.last_result = None
         self.target = None
-        api_key = os.getenv("OPENAI_API_KEY")
-        if api_key is None:
-            raise ValueError("The OPENAI_API_KEY environment variable is not set")
-        self.llm = ChatOpenAI(
-            model_name="gpt-4o",
-            temperature=0.0,
-            openai_api_key=api_key
-        )
+        # api_key = os.getenv("OPENAI_API_KEY")
+        # if api_key is None:
+        #     raise ValueError("The OPENAI_API_KEY environment variable is not set")
+        # self.llm = ChatOpenAI(
+        #     model_name="gpt-4o",
+        #     temperature=0.0,
+        #     openai_api_key=api_key
+        # )
 
     def start_session(self, target):
         self.target = target
