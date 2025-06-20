@@ -1,80 +1,198 @@
-from attack_executor.scan.nmap import NmapExecutor
+import argparse
 import subprocess
+import xml.etree.ElementTree as ET
 import json
+import sys
+from penetrationPlanner.parser.searchsploit import get_searchsploit_queries
 
 
 class SearchsploitExecutor:
-    def __init__(self, limit=None):
-        self.limit = limit
-        self.nmap = NmapExecutor()
-
+    """
+    Class to execute searchsploit commands and process the results.
+    Similar to how NmapExecutor works but for searchsploit.
+    """
+    
+    def __init__(self):
+        """
+        Initialize the SearchsploitExecutor.
+        """
+        pass
+    
     def search_exploits(self, query):
         """
-        Run searchsploit for the given query and return a list of exploit entries.
+        Run searchsploit with a query and return the exploits found.
+        
+        Args:
+            query: The search query for searchsploit
+            
+        Returns:
+            List of exploit dictionaries
         """
         cmd = ["searchsploit", "--json", query]
-        res = subprocess.run(cmd,
-                             stdout=subprocess.PIPE,
-                             stderr=subprocess.DEVNULL,
-                             text=True)
+        res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
         if res.returncode != 0 or not res.stdout:
             return []
-
         try:
             data = json.loads(res.stdout)
-            exploits = data.get("RESULTS_EXPLOIT", [])
-            if self.limit is not None:
-                return exploits[: self.limit]
-            return exploits
-
+            return data.get("RESULTS_EXPLOIT", [])
         except json.JSONDecodeError:
             return []
-
-    def searchsploit(self, target):
+    
+    def filter_and_index_exploits(self, results):
         """
-        Scan the target with Nmap, then for each open service,
-        query searchsploit and collect results.
+        Given the output from searchsploit(), return a dict indexed by CVE numbers.
+        
+        Args:
+            results: List of dictionaries from searchsploit()
+            
+        Returns:
+            Dict where keys are CVE numbers and values are dicts with service and exploit info
         """
-        services = self.nmap.scan_xml(target=target)
+        cve_index = {}
+        for service in results:
+            if not service.get('exploits'):
+                continue
+            
+            for exploit in service['exploits']:
+                codes = exploit.get('Codes', '')
+                
+                # Extract all CVE numbers from the Codes field
+                cves = [code.strip() for code in codes.split(';') if code.strip().startswith('CVE-')]
+                
+                # If there are no CVEs, skip this exploit
+                if not cves:
+                    continue
+                    
+                # Add each CVE to the index
+                for cve in cves:
+                    cve_index[cve] = {
+                        'service': service['name'],
+                        'address': service['address'],
+                        'exploit_title': exploit.get('Title', 'Unknown exploit'),
+                        'exploit_path': exploit.get('Path', ''),
+                        'exploit_id': exploit.get('EDB-ID', ''),
+                        'port': exploit.get('Port', ''),
+                        'type': exploit.get('Type', ''),
+                        'platform': exploit.get('Platform', '')
+                    }
+        
+        return cve_index
+    
+    def search(self, target, predicates):
+        """
+        Search for exploits based on predicates and return results.
+        
+        Args:
+            target: The target host IP
+            predicates: List of PDDL predicates from nmap parser
+            
+        Returns:
+            List of dictionaries containing services and their exploits
+        """
+        # Get search queries from predicates using our parser
+        search_queries = get_searchsploit_queries(predicates)
+        
+        # List to store results
         results = []
-
-        for svc in services:
-            # build a query string from service name, product, version
-            query = " ".join(filter(None,
-                                    [svc.get("name"),
-                                     svc.get("product"),
-                                     svc.get("version")]))
-            print(query)
+        
+        # For each query, search for exploits
+        for query in search_queries:
+            # Search for exploits
             exploits = self.search_exploits(query)
-            results.append({
-                **svc,
-                "query": query,
+            
+            # Create a service entry using the query
+            service = {
+                "name": query,
+                "product": "",
+                "version": "",
+                "address": target,
                 "exploits": exploits
-            })
-
+            }
+            
+            # Parse query to try to get product and version
+            parts = query.split()
+            if len(parts) > 1:
+                # Try to extract version if available
+                for part in reversed(parts):
+                    if any(c.isdigit() for c in part):
+                        service["version"] = part
+                        service["product"] = " ".join(parts[:-1])
+                        break
+            
+            results.append(service)
+        
         return results
+    
+    def search_with_cve_index(self, target, predicates):
+        """
+        Search for exploits and return both full results and a CVE-indexed dictionary.
+        
+        Args:
+            target: The target host IP
+            predicates: List of PDDL predicates from nmap parser
+            
+        Returns:
+            Tuple with (results, cve_index)
+        """
+        results = self.search(target, predicates)
+        cve_index = self.filter_and_index_exploits(results)
+        return results, cve_index
 
+
+# Legacy functions for backwards compatibility
+def search_exploits(query):
+    """Legacy function for backwards compatibility"""
+    executor = SearchsploitExecutor()
+    return executor.search_exploits(query)
+
+def filter_and_index_exploits(results):
+    """Legacy function for backwards compatibility"""
+    executor = SearchsploitExecutor()
+    return executor.filter_and_index_exploits(results)
+
+def searchsploit(target, predicates):
+    """Legacy function for backwards compatibility"""
+    executor = SearchsploitExecutor()
+    return executor.search(target, predicates)
+
+def searchsploit_with_cve_index(target, predicates):
+    """Legacy function for backwards compatibility"""
+    executor = SearchsploitExecutor()
+    return executor.search_with_cve_index(target, predicates)
+
+
+# Example usage
 if __name__ == "__main__":
-    ss = SearchsploitExecutor()
-    print(ss.searchsploit(target="10.129.171.90"))
-    # example output:
-    # [{'port': '21', 'proto': 'tcp', 'name': 'ftp', 'product': 'vsftpd', 'version': '2.3.4',
-    # 'query': 'ftp vsftpd 2.3.4', 'exploits': [{'Title': 'vsftpd 2.3.4 - Backdoor Command Execution (Metasploit)',
-    # 'EDB-ID': '17491', 'Date_Published': '2011-07-05', 'Date_Added': '2011-07-05', 'Date_Updated': '2021-04-12',
-    # 'Author': 'Metasploit', 'Type': 'remote', 'Platform': 'unix', 'Port': '', 'Verified': '1', 'Codes':
-    # 'OSVDB-73573;CVE-2011-2523', 'Tags': 'Metasploit Framework (MSF)', 'Aliases': '', 'Screenshot': '',
-    # 'Application': 'http://www.exploit-db.comvsftpd-2.3.4.tar.gz', 'Source': '',
-    # 'Path': '/snap/searchsploit/542/opt/exploitdb/exploits/unix/remote/17491.rb'},
-    # {'Title': 'vsftpd 2.3.4 - Backdoor Command Execution', 'EDB-ID': '49757',
-    # 'Date_Published': '2021-04-12', 'Date_Added': '2021-04-12', 'Date_Updated': '2021-07-16',
-    # 'Author': 'HerculesRD', 'Type': 'remote', 'Platform': 'unix', 'Port': '', 'Verified': '1',
-    # 'Codes': 'CVE-2011-2523', 'Tags': '', 'Aliases': '', 'Screenshot': '', 'Application': '', 'Source': '',
-    # 'Path': '/snap/searchsploit/542/opt/exploitdb/exploits/unix/remote/49757.py'}]}, {'port': '22', 'proto':
-    # 'tcp', 'name': 'ssh', 'product': 'OpenSSH', 'version': '4.7p1 Debian 8ubuntu1', 'query': 'ssh OpenSSH 4.7p1
-    # Debian 8ubuntu1', 'exploits': []}, {'port': '139', 'proto': 'tcp', 'name': 'netbios-ssn', 'product': 'Samba
-    # smbd', 'version': '3.X - 4.X', 'query': 'netbios-ssn Samba smbd 3.X - 4.X', 'exploits': []}, {'port': '445',
-    # 'proto': 'tcp', 'name': 'netbios-ssn', 'product': 'Samba smbd', 'version': '3.0.20-Debian', 'query': 'netbios
-    # -ssn Samba smbd 3.0.20-Debian', 'exploits': []}]
+    predicates = [
+        '(microsoft_dns_6_1_7601_running 10.129.17.237)', 
+        '(kerberos_running 10.129.17.237)',
+        '(msrpc_running 10.129.17.237)',
+        '(netbios_ssn_running 10.129.17.237)',
+        '(ad_ldap_running 10.129.17.237)',
+        '(microsoft_ds_running 10.129.17.237)',
+        '(msrpc_over_http_running 10.129.17.237)',
+        '(mc_nmf_running 10.129.17.237)',
+        '(microsoft_httpapi_2_0_running 10.129.17.237)'
+    ]
+    
+    # Create an instance of the executor
+    executor = SearchsploitExecutor()
+    
+    # Search for exploits
+    results, cve_index = executor.search_with_cve_index("10.129.17.237", predicates)
+    
+    print("Services with exploits:")
+    for service in results:
+        if service['exploits']:
+            print(f"  {service['name']}: {len(service['exploits'])} exploits found")
+            
+    print("\nExploits by CVE:")
+    for cve, info in cve_index.items():
+        print(f"  {cve}: {info['exploit_title']} (for {info['service']})")
+
+
+
+
 
 
 

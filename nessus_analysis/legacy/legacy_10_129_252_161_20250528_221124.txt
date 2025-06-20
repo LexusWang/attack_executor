@@ -1,0 +1,101 @@
+================================================================================
+VULNERABILITIES WITH EXPLOIT FRAMEWORKS REPORT
+Sorted by CVSS v3.0 Base Score (Highest First)
+================================================================================
+
+SCAN INFORMATION
+--------------------
+Scan Name: RawScan_10.129.252.161_1748487249
+Target: 10.129.252.161
+Scan Start: 1748487249
+Scan End: 1748487415
+Data Collection: 2025-05-28T21:57:10.125097
+
+SUMMARY
+--------------------
+Total Vulnerabilities with Exploit Frameworks: 3
+CRITICAL: 2
+HIGH: 1
+With CVSS v3.0 Scores: 0
+With CVSS v2.0 Scores: 3
+Total Unique CVEs: 0
+
+EXPLOIT FRAMEWORKS AVAILABLE
+------------------------------
+Metasploit: 3 vulnerabilities
+Core Impact: 3 vulnerabilities
+CANVAS: 2 vulnerabilities
+
+VULNERABILITIES WITH EXPLOIT FRAMEWORKS
+============================================================
+
+[1] CRITICAL - MS09-001: Microsoft Windows SMB Vulnerabilities Remote Code Execution (958687) (uncredentialed check) | CVSS v2.0: 10.0
+Host: 10.129.252.161 | Plugin ID: 35362
+[CVSS v2.0] Score: 10.0
+[CVSS v2.0] Vector: CVSS2#AV:N/AC:L/Au:N/C:C/I:C/A:C
+[CPE] CPE: cpe:/o:microsoft:windows
+[EXPLOIT FRAMEWORKS] Available frameworks:
+  + Metasploit:
+    - Microsoft SRV.SYS WriteAndX Invalid DataOffset
+  + Core Impact:
+    - Available
+[EXPLOIT] Exploit Ease: Exploits are available
+[RISK] Risk Factor: Critical
+[TIMELINE] Timeline: Vuln Published: 2008/09/14 | Patch Available: 2009/01/13
+------------------------------------------------------------
+
+[2] CRITICAL - MS08-067: Microsoft Windows Server Service Crafted RPC Request Handling Remote Code Execution (958644) (ECLIPSEDWING) (uncredentialed check) | CVSS v2.0: 10.0
+Host: 10.129.252.161 | Plugin ID: 34477
+[CVSS v2.0] Score: 10.0
+[CVSS v2.0] Vector: CVSS2#AV:N/AC:L/Au:N/C:C/I:C/A:C
+[CPE] CPE: cpe:/o:microsoft:windows
+[EXPLOIT FRAMEWORKS] Available frameworks:
+  + Metasploit:
+    - MS08-067 Microsoft Server Service Relative Path Stack Corruption
+  + CANVAS:
+    - Package: CANVAS
+  + Core Impact:
+    - Available
+[EXPLOIT] Exploit Ease: Exploits are available
+[RISK] Risk Factor: Critical
+[NEWS] In the news: true
+[TIMELINE] Timeline: Vuln Published: 2008/10/23 | Patch Available: 2008/10/23
+------------------------------------------------------------
+
+[3] HIGH - MS17-010: Security Update for Microsoft Windows SMB Server (4013389) (ETERNALBLUE) (ETERNALCHAMPION) (ETERNALROMANCE) (ETERNALSYNERGY) (WannaCry) (EternalRocks) (Petya) (uncredentialed check) | CVSS v2.0: 9.3
+Host: 10.129.252.161 | Plugin ID: 97833
+[CVSS v2.0] Score: 9.3
+[CVSS v2.0] Vector: CVSS2#AV:N/AC:M/Au:N/C:C/I:C/A:C
+[CPE] CPE: cpe:/o:microsoft:windows
+[EXPLOIT FRAMEWORKS] Available frameworks:
+  + Metasploit:
+    - SMB DOUBLEPULSAR Remote Code Execution
+  + CANVAS:
+    - Package: CANVAS
+  + Core Impact:
+    - Available
+[EXPLOIT] Exploit Ease: Exploits are available
+[RISK] Risk Factor: High
+[NEWS] In the news: true
+[TIMELINE] Timeline: Vuln Published: 2017/03/14 | Patch Available: 2017/03/14
+------------------------------------------------------------
+
+METASPLOIT EXPLOITATION TARGETS
+========================================
+Target: 10.129.252.161 - MS09-001: Microsoft Windows SMB Vulnerabilities Remote Code Execution (958687) (uncredentialed check) (CVSS: 10.0)
+  Metasploit Exploit: Microsoft SRV.SYS WriteAndX Invalid DataOffset
+  # search Microsoft SRV.SYS WriteAndX
+  # search MS09-001: Microsoft Windows
+  # set RHOSTS 10.129.252.161
+
+Target: 10.129.252.161 - MS08-067: Microsoft Windows Server Service Crafted RPC Request Handling Remote Code Execution (958644) (ECLIPSEDWING) (uncredentialed check) (CVSS: 10.0)
+  Metasploit Exploit: MS08-067 Microsoft Server Service Relative Path Stack Corruption
+  # search MS08-067 Microsoft Server
+  # search MS08-067: Microsoft Windows
+  # set RHOSTS 10.129.252.161
+
+Target: 10.129.252.161 - MS17-010: Security Update for Microsoft Windows SMB Server (4013389) (ETERNALBLUE) (ETERNALCHAMPION) (ETERNALROMANCE) (ETERNALSYNERGY) (WannaCry) (EternalRocks) (Petya) (uncredentialed check) (CVSS: 9.3)
+  Metasploit Exploit: SMB DOUBLEPULSAR Remote Code Execution
+  # search SMB DOUBLEPULSAR Remote
+  # search MS17-010: Security Update
+  # set RHOSTS 10.129.252.161

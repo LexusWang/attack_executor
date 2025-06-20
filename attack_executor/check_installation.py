@@ -39,6 +39,18 @@ def check_gobuster_installation():
             console.print("[bold red][FAILED] gobuster is uninstalled! [/bold red]")
         except subprocess.CalledProcessError:
             console.print("[bold red][FAILED] gobuster is uninstalled! [/bold red]")
+            
+def check_nessus_installation():
+    pass
+    # with console.status("Check if Nessus is installed..."):
+    #     try:
+    #         result = subprocess.run(["gobuster", "version"], capture_output=True, text=True, check=True)
+    #         console.print("[bold green][SUCCESS] gobuster is installed![/bold green]")
+    #         console.print(result.stdout.splitlines()[0])  # print the version info in the first line
+    #     except FileNotFoundError:
+    #         console.print("[bold red][FAILED] gobuster is uninstalled! [/bold red]")
+    #     except subprocess.CalledProcessError:
+    #         console.print("[bold red][FAILED] gobuster is uninstalled! [/bold red]")
 
 def check_installation():
     check_nmap_installation()

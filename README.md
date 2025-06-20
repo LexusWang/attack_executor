@@ -1,5 +1,4 @@
 <!-- [![Release](https://img.shields.io/badge/dynamic/json?color=blue&label=Release&query=tag_name&url=https%5B%5D)](https:%5B%5D) -->
-[![PyPI version](https://img.shields.io/pypi/v/attack-executor.svg)](https://pypi.org/project/attack-executor/)
 ![License](https://img.shields.io/github/license/LexusWang/attack_executor)
 
 # Attack Executor
@@ -7,12 +6,11 @@ Attack Executor is a standardized toolkit for conducting cyberattacks and penetr
 
 For now, Attack Executor supports the following penetration testing and red teaming tools:
 - Scanning
-    - [Nmap](https://nmap.org/)
-    - [Nuclei](https://github.com/projectdiscovery/nuclei)
-    - [Gobuster](https://github.com/OJ/gobuster)
+    - Nmap
+    - Gobuster
 - Exploitation
     - Searchsploit
-    - Exploit modules from [Metasploit](#metasploit)
+    - [Metasploit](#metasploit)
 - Privilege Escalation
     - Linpeas
 - Post-exploitation
@@ -21,24 +19,18 @@ For now, Attack Executor supports the following penetration testing and red team
 
 ## Installation
 In order to use Attack Executor, please install the Python package using
-```bash
+```
 pip install attack-executor
 ```
 
 You also need to install the tools that will be used by Attack Executor.
 Details can be found here:
-- Nmap
-- Nuclei
-- Gobuster
 - [Metasploit](#metasploit)
 - [Sliver](#sliver)
+- Nmap
+- Searchsploit
 
 We are preparing and will provide a script to automatically install all dependencies.
-
-You can run this command to check the installation of the tools
-```bash
-attack_executor --check_install
-```
 
 ## Sliver
 
@@ -46,7 +38,7 @@ attack_executor --check_install
 #### Install Sliver-server
 Download sliver-server bin from [their webite](https://github.com/BishopFox/sliver/releases)
 
-```bash
+```
 $ ./sliver-server
 
 sliver > new-operator --name zer0cool --lhost localhost --lport 34567 --save ./zer0cool.cfg
@@ -58,7 +50,7 @@ sliver > multiplayer --lport 34567
 ```
 
 Then, modify the related entries in `config.ini`:
-```ini
+```
 [sliver]
 client_config_file = /home/user/Downloads/zer0cool.cfg
 ```
@@ -68,7 +60,7 @@ client_config_file = /home/user/Downloads/zer0cool.cfg
 ### Installation
 #### Install Metasploit
 
-```bash
+```
 $ msfconsole
 msf> load msgrpc [Pass=yourpassword]
 [*] MSGRPC Service:  127.0.0.1:55552 
@@ -78,11 +70,38 @@ msf> load msgrpc [Pass=yourpassword]
 ```
 
 Then, modify the related entries in `config.ini`:
-```ini
+```
 [metasploit]
 password = glycNshR
 host_ip = 127.0.0.1
 listening_port = 55552
+```
+
+## Searchsploit
+
+### Installation
+
+Searchsploit is part of the ExploitDB project and is required for exploit searching functionality.
+
+- **On Kali Linux / Parrot OS:**
+  Searchsploit is usually pre-installed. If not, install it with:
+  ```
+  sudo apt update && sudo apt install exploitdb
+  ```
+- **On other Debian/Ubuntu-based systems:**
+  ```
+  sudo apt update && sudo apt install exploitdb
+  ```
+- **On macOS (using Homebrew):**
+  ```
+  brew install exploitdb
+  ```
+- **Manual installation and more info:**
+  See the official ExploitDB repository: https://github.com/offensive-security/exploitdb
+
+After installation, ensure the `searchsploit` command is available in your PATH by running:
+```
+searchsploit -h
 ```
 
 

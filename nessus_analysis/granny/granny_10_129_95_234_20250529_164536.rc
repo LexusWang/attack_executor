@@ -1,0 +1,23 @@
+# Metasploit Resource Script for Exploit Framework Vulnerabilities
+# Generated from Nessus raw scan data
+# Total vulnerabilities with Metasploit exploits: 1
+# Target hosts: 10.129.95.234
+# Associated CVEs: 
+
+# Set global options
+setg VERBOSE true
+
+# CRITICAL - Microsoft Windows Server 2003 IIS 6.0 WebDAV PROPFIND Request Handling RCE (EXPLODINGCAN)
+# Host: 10.129.95.234 | Plugin ID: 99523
+# CVSS Score: 10.0
+
+# Specific Metasploit Exploit: Microsoft IIS WebDav ScStoragePathFromUrl Overflow
+search Microsoft IIS WebDav
+
+search Microsoft Windows Server
+# Review search results and select appropriate module
+# search type:exploit
+# use <module_path>
+# set RHOSTS 10.129.95.234
+# set LHOST <your_ip>
+# exploit

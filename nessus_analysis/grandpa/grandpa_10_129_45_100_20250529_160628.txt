@@ -1,0 +1,56 @@
+================================================================================
+VULNERABILITIES WITH EXPLOIT FRAMEWORKS REPORT
+Sorted by CVSS v3.0 Base Score (Highest First)
+================================================================================
+
+SCAN INFORMATION
+--------------------
+Scan Name: RawScan_10.129.45.100_1748552248
+Target: 10.129.45.100
+Scan Start: 1748552248
+Scan End: 1748552736
+Data Collection: 2025-05-29T16:06:00.621039
+
+SUMMARY
+--------------------
+Total Vulnerabilities with Exploit Frameworks: 1
+CRITICAL: 1
+With CVSS v3.0 Scores: 0
+With CVSS v2.0 Scores: 1
+Total Unique CVEs: 0
+
+EXPLOIT FRAMEWORKS AVAILABLE
+------------------------------
+Metasploit: 1 vulnerabilities
+CANVAS: 1 vulnerabilities
+Core Impact: 1 vulnerabilities
+
+VULNERABILITIES WITH EXPLOIT FRAMEWORKS
+============================================================
+
+[1] CRITICAL - Microsoft Windows Server 2003 IIS 6.0 WebDAV PROPFIND Request Handling RCE (EXPLODINGCAN) | CVSS v2.0: 10.0
+Host: 10.129.45.100 | Plugin ID: 99523
+[CVSS v2.0] Score: 10.0
+[CVSS v2.0] Vector: CVSS2#AV:N/AC:L/Au:N/C:C/I:C/A:C
+[CPE] CPE: cpe:/o:microsoft:windows
+cpe:/a:microsoft:iis
+[EXPLOIT FRAMEWORKS] Available frameworks:
+  + Metasploit:
+    - Microsoft IIS WebDav ScStoragePathFromUrl Overflow
+  + CANVAS:
+    - Package: CANVAS
+  + Core Impact:
+    - Available
+[EXPLOIT] Exploit Ease: Exploits are available
+[RISK] Risk Factor: Critical
+[NEWS] In the news: true
+[TIMELINE] Timeline: Vuln Published: 2017/03/26
+------------------------------------------------------------
+
+METASPLOIT EXPLOITATION TARGETS
+========================================
+Target: 10.129.45.100 - Microsoft Windows Server 2003 IIS 6.0 WebDAV PROPFIND Request Handling RCE (EXPLODINGCAN) (CVSS: 10.0)
+  Metasploit Exploit: Microsoft IIS WebDav ScStoragePathFromUrl Overflow
+  # search Microsoft IIS WebDav
+  # search Microsoft Windows Server
+  # set RHOSTS 10.129.45.100

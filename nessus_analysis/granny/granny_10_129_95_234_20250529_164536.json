@@ -1,0 +1,57 @@
+[
+  {
+    "host": "10.129.95.234",
+    "host_id": 2,
+    "plugin_id": 99523,
+    "plugin_name": "Microsoft Windows Server 2003 IIS 6.0 WebDAV PROPFIND Request Handling RCE (EXPLODINGCAN)",
+    "severity": 4,
+    "severity_name": "CRITICAL",
+    "exploit_frameworks": [
+      {
+        "name": "Metasploit",
+        "exploits": [
+          {
+            "name": "Microsoft IIS WebDav ScStoragePathFromUrl Overflow",
+            "url": null
+          }
+        ]
+      },
+      {
+        "name": "CANVAS",
+        "exploits": [
+          {
+            "name": "Package: CANVAS",
+            "url": ""
+          }
+        ]
+      },
+      {
+        "name": "Core Impact",
+        "exploits": [
+          {
+            "name": "Available",
+            "url": ""
+          }
+        ]
+      }
+    ],
+    "cve_ids": [],
+    "cpe": [
+      "cpe:/o:microsoft:windows\ncpe:/a:microsoft:iis"
+    ],
+    "patch_date": "",
+    "vuln_pub_date": "2017/03/26",
+    "description": "",
+    "solution": "",
+    "risk_factor": "Critical",
+    "cvss_v2_score": "10.0",
+    "cvss_v3_score": "",
+    "cvss_v2_vector": "CVSS2#AV:N/AC:L/Au:N/C:C/I:C/A:C",
+    "cvss_v3_vector": "",
+    "exploit_available": true,
+    "exploit_ease": "Exploits are available",
+    "in_the_news": true,
+    "unsupported_by_vendor": false,
+    "plugin_output": ""
+  }
+]
