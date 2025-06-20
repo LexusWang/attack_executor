@@ -203,3 +203,8 @@ nessus_raw_data/
 output/
 reports/
 results/
+
+*DS_Store
+build/
+dist/
+attack_executor.egg-info/
