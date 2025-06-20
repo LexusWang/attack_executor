@@ -10,11 +10,11 @@ class NmapExecutor:
         """
         It sets up the initial state by assigning values to instance attributes.
         """
-        self.scanner = pynamp.PortScanner()
+        pass
 
     def run_nmap(self, target):
         # Run an Nmap scan with no host discovery (-Pn), default NSE scripts (-sC), service version detection (-sV), and return XML output as a string.
-        cmd = ["nmap", "-Pn", "-sC", "-sV", "-oX", "-", target]
+        cmd = ["nmap", "-Pn", "-sC", "-sV", "-oN", "-", target]
         res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         if res.returncode != 0:
             print(f"[!] nmap error: {res.stderr.strip()}", file=sys.stderr)
@@ -49,7 +49,7 @@ class NmapExecutor:
     def scan(self,
              target,
              options):        
-
+        self.scanner = pynamp.PortScanner()
         # Run a basic scan on the target
         self.scanner.scan(target, arguments=options)
 
@@ -64,8 +64,9 @@ class NmapExecutor:
                     print("Port: ", port, "State: ", self.scanner[host][proto][port]['state'])
                     
 if __name__ == "__main__":            
-    nmape = NmapExecutor()
-    nmape.scan(target="192.168.56.15",
-           options = "-sS -sV -O -A -p 1-1000")
+    nmapper = NmapExecutor()
+    # nmapper.scan(target="10.129.144.184",
+    #        options = "-sS -sV -O -A")
+    nmapper.run_nmap("10.129.144.184")
 
 
