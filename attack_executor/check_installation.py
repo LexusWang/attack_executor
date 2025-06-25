@@ -74,47 +74,6 @@ def check_whatweb_installation():
         except subprocess.CalledProcessError:
             console.print("[bold red][FAILED] whatweb is uninstalled! [/bold red]")
 
-def check_sliver_installation():
-    with console.status("Check if sliver-client is installed..."):
-        try:
-            # Sliver does not have a --version flag, use -h to check if it's installed
-            subprocess.run(["sliver-client", "-h"], capture_output=True, text=True, check=True)
-            console.print("[bold green][SUCCESS] sliver-client is installed![/bold green]")
-        except FileNotFoundError:
-            console.print("[bold red][FAILED] sliver-client is uninstalled! [/bold red]")
-        except subprocess.CalledProcessError:
-            console.print("[bold red][FAILED] sliver-client is uninstalled! [/bold red]")
-
-def check_metasploit_installation():
-    with console.status("Check if metasploit is installed..."):
-        try:
-            result = subprocess.run(["msfconsole", "--version"], capture_output=True, text=True, check=True)
-            console.print("[bold green][SUCCESS] metasploit is installed![/bold green]")
-            if result.stdout:
-                console.print(result.stdout.strip())
-        except FileNotFoundError:
-            console.print("[bold red][FAILED] metasploit is uninstalled! [/bold red]")
-        except subprocess.CalledProcessError:
-            console.print("[bold red][FAILED] metasploit is uninstalled! [/bold red]")
-
-def check_owasp_zap_installation():
-    with console.status("Check if OWASP ZAP is installed..."):
-        try:
-            # The command to check ZAP's version is zap.sh -version
-            result = subprocess.run(["zap.sh", "-version"], capture_output=True, text=True, check=True)
-            console.print("[bold green][SUCCESS] OWASP ZAP is installed![/bold green]")
-            if result.stdout:
-                console.print(result.stdout.strip())
-        except FileNotFoundError:
-            console.print("[bold red][FAILED] OWASP ZAP is uninstalled! [/bold red]")
-        except subprocess.CalledProcessError as e:
-            # ZAP returns a non-zero exit code on -version, so check stderr
-            if "ZAP" in e.stderr:
-                console.print("[bold green][SUCCESS] OWASP ZAP is installed![/bold green]")
-                console.print(e.stderr.strip())
-            else:
-                console.print("[bold red][FAILED] OWASP ZAP is uninstalled! [/bold red]")
-
 def check_installation():
     check_nmap_installation()
     check_nuclei_installation()
@@ -123,9 +82,7 @@ def check_installation():
     # check_nessus_installation()
     check_searchsploit_installation()
     check_whatweb_installation()
-    check_sliver_installation()
-    check_metasploit_installation()
-    check_owasp_zap_installation()
+
 
 if __name__ == "__main__":
     check_installation()
