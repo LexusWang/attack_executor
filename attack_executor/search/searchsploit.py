@@ -3,7 +3,7 @@ import subprocess
 import xml.etree.ElementTree as ET
 import json
 import sys
-from penetrationPlanner.parser.searchsploit import get_searchsploit_queries
+# from penetrationPlanner.parser.searchsploit import get_searchsploit_queries
 
 
 class SearchsploitExecutor:
