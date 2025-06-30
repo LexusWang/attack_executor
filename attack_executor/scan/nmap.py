@@ -64,9 +64,8 @@ class NmapExecutor:
                     print("Port: ", port, "State: ", self.scanner[host][proto][port]['state'])
                     
 if __name__ == "__main__":            
-    nmapper = NmapExecutor()
-    # nmapper.scan(target="10.129.144.184",
-    #        options = "-sS -sV -O -A")
-    nmapper.run_nmap("10.129.144.184")
+    nmap = NmapExecutor()
+    nmap.scan(target="192.168.56.15",
+           options = "-sS -sV -O -A -p 1-1000")
 
 
