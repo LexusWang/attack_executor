@@ -506,10 +506,10 @@ if __name__ == "__main__":
     # Example usage if run directly
     if len(os.sys.argv) == 1:
         # Default configuration for testing
-        TARGET_IP = "10.129.9.160"
-        NESSUS_SERVER = "https://localhost:15858"
-        USERNAME = "root"
-        PASSWORD = "root"
+        TARGET_IP = "10.129.248.28"
+        NESSUS_SERVER = "https://localhost:8834"
+        USERNAME = "parrot"
+        PASSWORD = "parrot"
         OUTPUT_DIR = "nessus_raw_data"
         print("Nessus Raw Data Scanner")
         print("=" * 40)

@@ -17,10 +17,12 @@ class GobusterExecutor:
         #     openai_api_key=api_key
         # )
 
-    def start_session(self, target):
+    def start_session(self, target = None):
         self.target = target
         
-    def enumerate_dir(self, target_url, wordlist, extensions=None, threads=10):
+    def enumerate_dir(self, target_url=None, wordlist='/usr/share/wordlists/dirb/common.txt', extensions=None, threads=10):
+        if target_url == None:
+            target_url = self.target
         command = ["gobuster", "dir", "-u", target_url, "-w", wordlist]
         
         # Add extensions if provided
@@ -53,7 +55,9 @@ class GobusterExecutor:
                 print("Error:", e.stderr)
             return None
         
-    def enumerate_subdomain(self, main_domain, wordlist, threads=10):
+    def enumerate_subdomain(self, main_domain=None, wordlist='/usr/share/wordlists/dirb/common.txt', threads=10):
+        if main_domain == None:
+            main_domain = self.target
         command = ["gobuster", "dns", "-d", main_domain, "-w", wordlist, "-t", str(threads)]
         try:
             process = subprocess.run(
@@ -142,9 +146,9 @@ class GobusterExecutor:
 
 if __name__ == "__main__":
     gobuster_executor = GobusterExecutor()
-    gobuster_executor.start_session("http://10.129.63.144/")
-    gobuster_executor.enumerate_subdomain()
-    gobuster_executor.enumerate_dir()
-    gobuster_executor.fuzz_directory()
-    result = gobuster_executor.match_output_with_predicate("./predicates.txt")
-    print(result)
+    gobuster_executor.start_session()
+    # gobuster_executor.enumerate_subdomain()
+    gobuster_executor.enumerate_dir("http://10.129.144.184:8500/")
+    # gobuster_executor.fuzz_directory()
+    # result = gobuster_executor.match_output_with_predicate("./predicates.txt")
+    # print(result)
