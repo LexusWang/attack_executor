@@ -1,7 +1,7 @@
 import subprocess
 import sys
 
-import nmap as pynamp
+# import nmap as pynamp
 import xml.etree.ElementTree as ET
 
 from attack_executor.bash.CommandExecutor import execute_command
@@ -16,14 +16,8 @@ class NmapExecutor:
 
     def scan(self, target, options = "-Pn -sC -sV -oN"):
         # Run an Nmap scan with no host discovery (-Pn), default NSE scripts (-sC), service version detection (-sV), and return XML output as a string.
-        # cmd = ["nmap", "-Pn", "-sC", "-sV", "-oN", "-", target]
-        # res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-        # if res.returncode != 0:
-        #     print(f"[!] nmap error: {res.stderr.strip()}", file=sys.stderr)
-        #     sys.exit(1)
-        # return res.stdout
-        
         result = execute_command(f"nmap {options} - {target}")
+        return result['stdout']
 
     def parse_nmap(self, xml_data):
         """Parse nmap XML and return list of open ports with service info."""
@@ -70,6 +64,7 @@ class NmapExecutor:
 if __name__ == "__main__":            
     nmap = NmapExecutor()
     # nmap.scan(target="192.168.56.15", options = "-sS -sV -O -A -p 1-1000")
-    nmap.scan(target="192.168.56.15")
+    result = nmap.scan(target="10.129.99.21")
+    print(result)
 
 

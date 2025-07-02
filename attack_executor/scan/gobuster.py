@@ -1,8 +1,6 @@
 import subprocess
 import os
-# from langchain_openai import ChatOpenAI
-# from langchain_core.prompts import ChatPromptTemplate
-# from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
+from attack_executor.bash.CommandExecutor import execute_command
 
 class GobusterExecutor:
     def __init__(self):
@@ -20,11 +18,7 @@ class GobusterExecutor:
     def start_session(self, target = None):
         self.target = target
         
-    def enumerate_dir(self, target_url=None, wordlist='/usr/share/wordlists/dirb/common.txt', extensions=None, threads=10):
-        if target_url == None:
-            target_url = self.target
-        command = ["gobuster", "dir", "-u", target_url, "-w", wordlist]
-        
+    def enumerate_dir(self, target_url, wordlist='/usr/share/wordlists/dirb/common.txt', extensions=None, threads=10):
         # Add extensions if provided
         if extensions:
             if isinstance(extensions, list):
@@ -33,27 +27,8 @@ class GobusterExecutor:
                 extensions_str = extensions
             command.extend(["-x", extensions_str])
             
-        # Add threads parameter
-        command.extend(["-t", str(threads)])
-            
-        try:
-            process = subprocess.run(
-                command,
-                capture_output=True,
-                text=True,
-                check=True
-            )
-            output = process.stdout
-            self.last_result = output
-            print(output)
-            return output
-        except subprocess.CalledProcessError as e:
-            print(f"Gobuster scan failed: {e}")
-            if e.stdout:
-                print("Output:", e.stdout)
-            if e.stderr:
-                print("Error:", e.stderr)
-            return None
+        result = execute_command(f"gobuster dir -u {target} -w {wordlist} -t {threads}")
+        return result['stdout']
         
     def enumerate_subdomain(self, main_domain=None, wordlist='/usr/share/wordlists/dirb/common.txt', threads=10):
         if main_domain == None:

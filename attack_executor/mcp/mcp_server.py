@@ -12,6 +12,8 @@ import requests
 from fastmcp import FastMCP
 
 from attack_executor.scan.nmap import NmapExecutor
+from attack_executor.scan.whatweb import WhatwebExecutor
+from attack_executor.scan.gobuster import GobusterExecutor
 
 # Configure logging
 logging.basicConfig(
@@ -116,131 +118,110 @@ def setup_mcp_server() -> FastMCP:
     """
     mcp = FastMCP("attack-executor-mcp")
     
+    # @mcp.tool()
+    # def nmap_scan(target: str, options: str = None) -> Dict[str, Any]:
+    #     """
+    #     Execute an Nmap scan using the Attack Executor NmapExecutor.
+        
+    #     Args:
+    #         target: The IP address or hostname to scan
+    #         options: Nmap scan options (e.g., "-sS -sV -O -A") or "xml" for XML parsing
+            
+    #     Returns:
+    #         Scan results from NmapExecutor
+    #     """
+    #     nmap = NmapExecutor()
+    #     if options:
+    #         return nmap.scan(target=target, options = options)
+    #     else:
+    #         return nmap.scan(target=target)
+
     @mcp.tool()
-    def nmap_scan(target: str, options: str = "-sS -sV -O -A") -> Dict[str, Any]:
+    def nmap_scan(target: str) -> Dict[str, Any]:
         """
         Execute an Nmap scan using the Attack Executor NmapExecutor.
         
         Args:
             target: The IP address or hostname to scan
-            options: Nmap scan options (e.g., "-sS -sV -O -A") or "xml" for XML parsing
             
         Returns:
             Scan results from NmapExecutor
         """
         nmap = NmapExecutor()
-        # nmap.scan(target="192.168.56.15", options = "-sS -sV -O -A -p 1-1000")
-        nmap.scan(target="192.168.56.15")
-        # data = {
-        #     "target": target,
-        #     "options": options
-        # }
-        # return attack_executor_client.safe_post("api/scan/nmap", data)
+        return nmap.scan(target=target)
 
-    @mcp.tool()
-    def gobuster_scan(
-        target: str, 
-        mode: str = "dir", 
-        wordlist: str = "/usr/share/wordlists/dirb/common.txt", 
-        extensions: Optional[List[str]] = None, 
-        threads: int = 10,
-        endchar: str = "/"
-    ) -> Dict[str, Any]:
-        """
-        Execute Gobuster scan using the Attack Executor GobusterExecutor.
+    @mcp.tool
+    def roll_dice(n_dice: int) -> list[int]:
+        """Roll `n_dice` 6-sided dice and return the results."""
+        import random
+        return [random.randint(1, 6) for _ in range(n_dice)]
+
+    # @mcp.tool()
+    # def gobuster_dir_enumerate(target: str) -> Dict[str, Any]:
+    #     """
+    #     Execute Gobuster scan using the Attack Executor GobusterExecutor.
         
-        Args:
-            target: The target URL or domain
-            mode: Scan mode (dir, subdomain, fuzz)
-            wordlist: Path to wordlist file
-            extensions: List of file extensions for dir mode
-            threads: Number of threads to use
-            endchar: End character for fuzz mode
+    #     Args:
+    #         target: The target URL or domain
             
-        Returns:
-            Scan results from GobusterExecutor
-        """
-        data = {
-            "target": target,
-            "mode": mode,
-            "wordlist": wordlist,
-            "extensions": extensions,
-            "threads": threads,
-            "endchar": endchar
-        }
-        return attack_executor_client.safe_post("api/scan/gobuster", data)
+    #     Returns:
+    #         Scan results from GobusterExecutor
+    #     """
+    #     scanner = GobusterExecutor()
+    #     return scanner.enumerate_dir(target)
     
     @mcp.tool()
-    def whatweb_scan(
-        target: str, 
-        mode: str = "dir", 
-        wordlist: str = "/usr/share/wordlists/dirb/common.txt", 
-        extensions: Optional[List[str]] = None, 
-        threads: int = 10,
-        endchar: str = "/"
-    ) -> Dict[str, Any]:
+    def whatweb_scan(target: str) -> Dict[str, Any]:
         """
-        Execute Gobuster scan using the Attack Executor GobusterExecutor.
+        Execute Whatweb scan on the target URL
         
         Args:
-            target: The target URL or domain
-            mode: Scan mode (dir, subdomain, fuzz)
-            wordlist: Path to wordlist file
-            extensions: List of file extensions for dir mode
-            threads: Number of threads to use
-            endchar: End character for fuzz mode
+            target: The web address (URL, domain, or IP) that serves HTTP or HTTPS content.
             
         Returns:
-            Scan results from GobusterExecutor
+            Scan results from Whatweb
         """
-        data = {
-            "target": target,
-            "mode": mode,
-            "wordlist": wordlist,
-            "extensions": extensions,
-            "threads": threads,
-            "endchar": endchar
-        }
-        return attack_executor_client.safe_post("api/scan/gobuster", data)
+        scanner = WhatwebExecutor()
+        return scanner.scan(target = target)
     
-    @mcp.tool()
-    def nuclei_scan(
-        target: str
-    ) -> Dict[str, Any]:
-        """
-        Execute Gobuster scan using the Attack Executor GobusterExecutor.
+    # @mcp.tool()
+    # def nuclei_scan(
+    #     target: str
+    # ) -> Dict[str, Any]:
+    #     """
+    #     Execute Gobuster scan using the Attack Executor GobusterExecutor.
         
-        Args:
-            target: The target URL or domain
+    #     Args:
+    #         target: The target URL or domain
             
-        Returns:
-            Scan results from Nuclei
-        """
-        data = {
-            "target": target,
-            "mode": mode,
-            "wordlist": wordlist,
-            "extensions": extensions,
-            "threads": threads,
-            "endchar": endchar
-        }
-        return attack_executor_client.safe_post("api/scan/gobuster", data)
+    #     Returns:
+    #         Scan results from Nuclei
+    #     """
+    #     data = {
+    #         "target": target,
+    #         "mode": mode,
+    #         "wordlist": wordlist,
+    #         "extensions": extensions,
+    #         "threads": threads,
+    #         "endchar": endchar
+    #     }
+    #     return attack_executor_client.safe_post("api/scan/gobuster", data)
 
-    @mcp.tool()
-    def shell_execute(command: str) -> Dict[str, Any]:
-        """
-        Execute shell commands using the Attack Executor ShellExecutor.
+    # @mcp.tool()
+    # def shell_execute(command: str) -> Dict[str, Any]:
+    #     """
+    #     Execute shell commands using the Attack Executor ShellExecutor.
         
-        Args:
-            command: Shell command to execute
+    #     Args:
+    #         command: Shell command to execute
             
-        Returns:
-            Command execution results with stdout, stderr, and return code
-        """
-        data = {
-            "command": command
-        }
-        return attack_executor_client.safe_post("api/shell/execute", data)
+    #     Returns:
+    #         Command execution results with stdout, stderr, and return code
+    #     """
+    #     data = {
+    #         "command": command
+    #     }
+    #     return attack_executor_client.safe_post("api/shell/execute", data)
 
     return mcp
 
@@ -263,25 +244,23 @@ def main():
         logger.setLevel(logging.DEBUG)
         logger.debug("Debug logging enabled")
     
-    # Initialize the Attack Executor client
-    # attack_executor_client = AttackExecutorClient(args.server, args.timeout)
-    
-    # # Check server health and log the result
-    # health = attack_executor_client.check_health()
-    # if "error" in health:
-    #     logger.warning(f"Unable to connect to Attack Executor API server at {args.server}: {health['error']}")
-    #     logger.warning("MCP server will start, but tool execution may fail")
-    # else:
-    #     logger.info(f"Successfully connected to Attack Executor API server at {args.server}")
-    #     logger.info(f"Server health status: {health['status']}")
-    #     if health.get("tools_available"):
-    #         available_tools = [tool for tool, available in health["tools_available"].items() if available]
-    #         logger.info(f"Available tools: {', '.join(available_tools)}")
-    
     # Set up and run the MCP server
     mcp = setup_mcp_server()
     logger.info("Starting Attack Executor MCP server")
-    mcp.run()
+    mcp.run(transport="sse")
+
+def test():
+    import asyncio
+    from fastmcp import Client
+    mcp = setup_mcp_server()
+    client = Client(mcp)
+    async def call_tool(target: str):
+        async with client:
+            result = await client.call_tool("nmap_scan", {"target": target})
+            print(result)
+
+    asyncio.run(call_tool("10.129.99.21"))
 
 if __name__ == "__main__":
-    main() 
+    main()
+    # test() 
